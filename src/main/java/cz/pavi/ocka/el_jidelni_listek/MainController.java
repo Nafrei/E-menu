@@ -78,8 +78,8 @@ public class MainController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) 
     {
-        soups.setGraphic(getObrazekZOdkazu("file:images/polevka2_1.png"));
-        hlavniJidla.setGraphic(getObrazekZOdkazu("file:images/smazak1_2.png"));
+        //soups.setGraphic(getObrazekZOdkazu("file:images/polevka2_1.png"));
+        //hlavniJidla.setGraphic(getObrazekZOdkazu("file:images/smazak1_2.png"));
         boxPriloh.setVisible(false);
         
         
@@ -91,7 +91,7 @@ public class MainController implements Initializable {
             pridat.setVisible(false);
         }
         
-        setEventHandlerOnAddOrderButtons();
+        
         kontrolujZmenuTabu(); 
     }
     
@@ -140,6 +140,7 @@ public class MainController implements Initializable {
     {
         this.service = service;
         nastavList(POLEVKY, listPolevek);
+        setEventHandlerOnAddOrderButtons();
     }
         
     /**
