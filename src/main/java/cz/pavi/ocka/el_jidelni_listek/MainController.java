@@ -83,11 +83,6 @@ public class MainController implements Initializable {
         mainCourses.setGraphic(getObrazekZOdkazu("file:images/smazak1_2.png"));
         sideDishesBox.setVisible(false);
 
-       
-
-
-        
-        
         for(int i=1; i<5; i++)
         {
             Label alergenyText = (Label) panel.lookup("#alergenyText" + i);

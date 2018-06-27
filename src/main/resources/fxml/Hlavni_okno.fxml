@@ -35,7 +35,7 @@
                                  </font>
                               </Label>
                               <Button fx:id="pridat1" layoutX="291.0" layoutY="262.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="121.0" text="Přidat k objednávce" />
-                              <Label fx:id="popis1" layoutX="260.0" layoutY="17.0" prefHeight="159.0" prefWidth="175.0" />
+                              <Label fx:id="popis1" wrapText="true" layoutX="260.0" layoutY="17.0" prefHeight="159.0" prefWidth="175.0" />
                               <Label fx:id="alergeny1" layoutX="95.0" layoutY="273.0" prefHeight="17.0" prefWidth="137.0" />
                            </children>
                         </AnchorPane>
@@ -64,7 +64,7 @@
                                  </font>
                               </Label>
                               <Button fx:id="pridat2" layoutX="291.0" layoutY="262.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="121.0" text="Přidat k objednávce" />
-                              <Label fx:id="popis2" layoutX="260.0" layoutY="17.0" prefHeight="159.0" prefWidth="175.0" />
+                              <Label fx:id="popis2" wrapText="true" layoutX="260.0" layoutY="17.0" prefHeight="159.0" prefWidth="175.0" />
                               <ChoiceBox fx:id="sideDishesBox" layoutX="273.0" layoutY="191.0" prefWidth="150.0" />
                               <Label fx:id="alergeny2" layoutX="95.0" layoutY="273.0" prefHeight="17.0" prefWidth="137.0" />
                            </children>
@@ -93,7 +93,7 @@
                                  </font>
                               </Label>
                               <Button fx:id="pridat3" layoutX="291.0" layoutY="262.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="121.0" text="Přidat k objednávce" />
-                              <Label fx:id="popis3" layoutX="260.0" layoutY="17.0" prefHeight="159.0" prefWidth="175.0" />
+                              <Label fx:id="popis3" wrapText="true" layoutX="260.0" layoutY="17.0" prefHeight="159.0" prefWidth="175.0" />
                               <Label fx:id="alergeny3" layoutX="95.0" layoutY="273.0" prefHeight="17.0" prefWidth="137.0" />
                            </children>
                         </AnchorPane>
@@ -120,7 +120,7 @@
                                  </font>
                               </Label>
                               <Button fx:id="pridat4" layoutX="291.0" layoutY="262.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="121.0" text="Přidat k objednávce" />
-                              <Label fx:id="popis4" layoutX="260.0" layoutY="17.0" prefHeight="159.0" prefWidth="175.0" />
+                              <Label fx:id="popis4" wrapText="true" layoutX="260.0" layoutY="17.0" prefHeight="159.0" prefWidth="175.0" />
                               <Label fx:id="alergeny4" layoutX="95.0" layoutY="273.0" prefHeight="17.0" prefWidth="137.0" />
                            </children>
                         </AnchorPane>
