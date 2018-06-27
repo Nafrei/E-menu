@@ -19,13 +19,13 @@ import javafx.scene.image.ImageView;
  */
 public class Meal {
     
-    private String nazev;
+    private String mealName;
     private String description;
-    private String alergeny;
-    private String gramy;
+    private String allergeny;
+    private String grams;
     private int type;
-    private Image obrazek;
-    private int cena;
+    private Image picture;
+    private int price;
    
    
 
@@ -35,24 +35,24 @@ public class Meal {
     }
     
     public Meal(String nazev, String popis, String alergeny, String gramy, int cena, int typ, Image obrazek) {
-        this.nazev = nazev;
+        this.mealName = nazev;
         this.description = popis;
-        this.alergeny = alergeny;
-        this.gramy = gramy;
-        this.obrazek = obrazek;
+        this.allergeny = alergeny;
+        this.grams = gramy;
+        this.picture = obrazek;
         this.type = typ;
-        this.cena = cena;
+        this.price = cena;
     }
     
     public Meal(String nazev, int cena)
     {
-        this.nazev = nazev;
-        this.cena = cena;
+        this.mealName = nazev;
+        this.price = cena;
     }
     
     public String getNazev()
     {
-        return nazev;
+        return mealName;
     }
     
     public String getPopis()
@@ -62,22 +62,22 @@ public class Meal {
     
     public String getAlergeny()
     {
-        return alergeny;
+        return allergeny;
     }
     
     public String getGramy()
     {
-        return gramy;
+        return grams;
     }
     
     public int getCena()
     {
-        return cena;
+        return price;
     }
     
     public Image getObrazek()
     {
-        return obrazek;
+        return picture;
     }
     
     public int getTyp()
