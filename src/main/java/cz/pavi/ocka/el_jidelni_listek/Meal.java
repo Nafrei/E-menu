@@ -36,7 +36,7 @@ public class Meal {
         this.picture = obrazek;
         this.type = typ;
         this.price = cena;
-        System.out.println("Baf");
+       
     }
     
     public Meal(String nazev, int cena)
