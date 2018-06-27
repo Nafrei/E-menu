@@ -16,11 +16,11 @@
    <children>
       <TabPane fx:id="panel" layoutY="61.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="359.0" prefWidth="649.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
         <tabs>
-          <Tab fx:id="soups" text="Soups">
+          <Tab fx:id="soups" text="Polévky">
             <content>
               <AnchorPane fx:id="panelTypu" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="333.0" prefWidth="649.0">
                      <children>
-                        <ListView fx:id="soupsList" prefHeight="332.0" prefWidth="207.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" />
+                        <ListView fx:id="list1" prefHeight="332.0" prefWidth="207.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" />
                         <AnchorPane fx:id="panelDetailu" layoutX="200.0" prefHeight="333.0" prefWidth="445.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="199.99999999999994" AnchorPane.rightAnchor="-69.99999999999989" AnchorPane.topAnchor="0.0">
                            <children>
                               <ImageView fx:id="obrazek1" fitHeight="157.0" fitWidth="200.0" layoutX="23.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true" />
@@ -44,11 +44,11 @@
                   </AnchorPane>
             </content>
           </Tab>
-          <Tab fx:id="mainCourses" text="Main courses">
+          <Tab fx:id="mainCourses" text="Hlavní jídla">
             <content>
               <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="333.0" prefWidth="649.0">
                      <children>
-                        <ListView fx:id="mainCoursesList" prefHeight="330.0" prefWidth="200.0" />
+                        <ListView fx:id="list2" prefHeight="330.0" prefWidth="200.0" />
                         <AnchorPane fx:id="panelDetailu1" layoutX="200.0" layoutY="-2.0" prefHeight="333.0" prefWidth="445.0">
                            <children>
                               <ImageView fx:id="obrazek2" fitHeight="157.0" fitWidth="200.0" layoutX="23.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true" />
@@ -77,7 +77,7 @@
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <ListView fx:id="listPolevek1" layoutX="203.0" layoutY="-2.0" prefHeight="332.0" prefWidth="207.0" />
+                        <ListView fx:id="list3" layoutX="203.0" layoutY="-2.0" prefHeight="332.0" prefWidth="207.0" />
                         <AnchorPane fx:id="panelDetailu2" layoutX="203.0" layoutY="-2.0" prefHeight="333.0" prefWidth="445.0">
                            <children>
                               <ImageView fx:id="obrazek3" fitHeight="157.0" fitWidth="200.0" layoutX="23.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true" />
@@ -104,7 +104,7 @@
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="330.0" prefWidth="638.0">
                      <children>
-                        <ListView fx:id="listPolevek2" layoutX="203.0" layoutY="-2.0" prefHeight="332.0" prefWidth="207.0" />
+                        <ListView fx:id="list4" layoutX="203.0" layoutY="-2.0" prefHeight="332.0" prefWidth="207.0" />
                         <AnchorPane fx:id="panelDetailu3" layoutX="203.0" layoutY="-2.0" prefHeight="333.0" prefWidth="445.0">
                            <children>
                               <ImageView fx:id="obrazek4" fitHeight="157.0" fitWidth="200.0" layoutX="23.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true" />
@@ -129,7 +129,7 @@
             </Tab>
         </tabs>
       </TabPane>
-      <Button fx:id="pay" layoutX="492.0" layoutY="13.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="127.0" style="-fx-background-color: #7CFC00;" text="Pay" />
+      <Button fx:id="pay" layoutX="492.0" layoutY="13.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="127.0" style="-fx-background-color: #7CFC00;" text="Zaplatit" />
       <Text layoutX="244.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Jidelni listek" wrappingWidth="63.6328125" />
       <Text layoutX="14.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Stůl:" wrappingWidth="41.19647216796875">
          <font>
@@ -137,7 +137,7 @@
          </font>
       </Text>
       <TextField fx:id="table" layoutX="55.0" layoutY="21.0" onMouseExited="#onMysPrycStul" prefHeight="25.0" prefWidth="49.0" />
-      <Text fx:id="warning" fill="#dc3939" layoutX="113.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Choose the table (1-5)" wrappingWidth="112.80337524414062">
+      <Text fx:id="warning" fill="#dc3939" layoutX="113.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vyberte stůl (1-5)" wrappingWidth="112.80337524414062">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
