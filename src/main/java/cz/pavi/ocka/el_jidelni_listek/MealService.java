@@ -22,6 +22,8 @@ public interface MealService
     
     void addToOrder();
     
+    void deleteFromOrder(Meal meal);
+    
     void order();
     
     void setChosenTable(int number); 
