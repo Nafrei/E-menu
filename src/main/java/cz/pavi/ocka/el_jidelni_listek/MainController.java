@@ -39,10 +39,6 @@ public class MainController implements Initializable {
     private Tab mainCourses;
     
     @FXML
-    private ListView soupsList;
-    @FXML
-    private ListView mainCoursesList;
-    @FXML
     private ChoiceBox sideDishesBox;
     
     @FXML
