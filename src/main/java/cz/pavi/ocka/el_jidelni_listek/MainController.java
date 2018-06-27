@@ -32,7 +32,7 @@ import javafx.scene.text.Text;
 public class MainController implements Initializable {
     
     @FXML
-    private Tab polevky;
+    private Tab soups;
     @FXML
     private Tab hlavniJidla;
     
@@ -75,7 +75,7 @@ public class MainController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) 
     {
-        polevky.setGraphic(getObrazekZOdkazu("file:images/polevka2_1.png"));
+        soups.setGraphic(getObrazekZOdkazu("file:images/polevka2_1.png"));
         hlavniJidla.setGraphic(getObrazekZOdkazu("file:images/smazak1_2.png"));
         boxPriloh.setVisible(false);
         
@@ -101,7 +101,7 @@ public class MainController implements Initializable {
         @Override
         public void changed(ObservableValue<? extends Tab> observable, Tab oldValue, Tab newValue) 
         {
-            if(newValue == polevky) 
+            if(newValue == soups) 
             {
                 nastavList(POLEVKY, listPolevek);
             }
