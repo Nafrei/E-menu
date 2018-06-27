@@ -103,7 +103,7 @@ public class MainController implements Initializable {
         
             buttonAdd.setOnAction(new EventHandler<ActionEvent>() {
                 @Override public void handle(ActionEvent e) {
-                    System.out.println("nazdar bazar");
+                    service.setNumberOfOrderedMeals(service.getNumberOfOrderedMeals() + 1);
                 }
                 
             });
