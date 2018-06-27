@@ -83,14 +83,7 @@ public class MainController implements Initializable {
         mainCourses.setGraphic(getObrazekZOdkazu("file:images/smazak1_2.png"));
         sideDishesBox.setVisible(false);
 
-        //soups.setGraphic(getObrazekZOdkazu("file:images/polevka2_1.png"));
-        //hlavniJidla.setGraphic(getObrazekZOdkazu("file:images/smazak1_2.png"));
-
-        sideDishesBox.setVisible(false);
-
-        sideDishesBox.setVisible(false);
-
-        sideDishesBox.setVisible(false);
+       
 
 
         

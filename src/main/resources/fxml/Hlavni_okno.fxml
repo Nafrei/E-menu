@@ -16,11 +16,11 @@
    <children>
       <TabPane fx:id="panel" layoutY="61.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="359.0" prefWidth="649.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
         <tabs>
-          <Tab fx:id="polevky" text="Polévky">
+          <Tab fx:id="soups" text="Soups">
             <content>
               <AnchorPane fx:id="panelTypu" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="333.0" prefWidth="649.0">
                      <children>
-                        <ListView fx:id="listPolevek" prefHeight="332.0" prefWidth="207.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" />
+                        <ListView fx:id="soupsList" prefHeight="332.0" prefWidth="207.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" />
                         <AnchorPane fx:id="panelDetailu" layoutX="200.0" prefHeight="333.0" prefWidth="445.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="199.99999999999994" AnchorPane.rightAnchor="-69.99999999999989" AnchorPane.topAnchor="0.0">
                            <children>
                               <ImageView fx:id="obrazek1" fitHeight="157.0" fitWidth="200.0" layoutX="23.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true" />
@@ -44,11 +44,11 @@
                   </AnchorPane>
             </content>
           </Tab>
-          <Tab fx:id="hlavniJidla" text="Hlavní jídla">
+          <Tab fx:id="mainCourses" text="Main courses">
             <content>
               <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="333.0" prefWidth="649.0">
                      <children>
-                        <ListView fx:id="listHlavnichJidel" prefHeight="330.0" prefWidth="200.0" />
+                        <ListView fx:id="mainCoursesList" prefHeight="330.0" prefWidth="200.0" />
                         <AnchorPane fx:id="panelDetailu1" layoutX="200.0" layoutY="-2.0" prefHeight="333.0" prefWidth="445.0">
                            <children>
                               <ImageView fx:id="obrazek2" fitHeight="157.0" fitWidth="200.0" layoutX="23.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true" />
@@ -65,7 +65,7 @@
                               </Label>
                               <Button fx:id="pridat2" layoutX="291.0" layoutY="262.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="121.0" text="Přidat k objednávce" />
                               <Label fx:id="popis2" layoutX="260.0" layoutY="17.0" prefHeight="159.0" prefWidth="175.0" />
-                              <ChoiceBox fx:id="boxPriloh" layoutX="273.0" layoutY="191.0" prefWidth="150.0" />
+                              <ChoiceBox fx:id="sideDishesBox" layoutX="273.0" layoutY="191.0" prefWidth="150.0" />
                               <Label fx:id="alergeny2" layoutX="95.0" layoutY="273.0" prefHeight="17.0" prefWidth="137.0" />
                            </children>
                         </AnchorPane>
@@ -129,20 +129,20 @@
             </Tab>
         </tabs>
       </TabPane>
-      <Button fx:id="zaplatit" layoutX="492.0" layoutY="13.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="127.0" style="-fx-background-color: #7CFC00;" text="Zaplatit" />
+      <Button fx:id="pay" layoutX="492.0" layoutY="13.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="127.0" style="-fx-background-color: #7CFC00;" text="Pay" />
       <Text layoutX="244.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Jidelni listek" wrappingWidth="63.6328125" />
       <Text layoutX="14.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Stůl:" wrappingWidth="41.19647216796875">
          <font>
             <Font size="17.0" />
          </font>
       </Text>
-      <TextField fx:id="stul" layoutX="55.0" layoutY="21.0" onMouseExited="#onMysPrycStul" prefHeight="25.0" prefWidth="49.0" />
-      <Text fx:id="upozorneni" fill="#dc3939" layoutX="113.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vyberte stůl (1-5)" wrappingWidth="112.80337524414062">
+      <TextField fx:id="table" layoutX="55.0" layoutY="21.0" onMouseExited="#onMysPrycStul" prefHeight="25.0" prefWidth="49.0" />
+      <Text fx:id="warning" fill="#dc3939" layoutX="113.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Choose the table (1-5)" wrappingWidth="112.80337524414062">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Text>
       <ImageView fitHeight="39.0" fitWidth="41.0" layoutX="362.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
-      <Label fx:id="pocetKusu" layoutX="334.0" layoutY="25.0" text="Label" />
+      <Label fx:id="numberOfItems" layoutX="334.0" layoutY="25.0" text="Label" />
    </children>
 </AnchorPane>
