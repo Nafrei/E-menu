@@ -55,7 +55,8 @@ public class MainController implements Initializable {
     @FXML
     private Button zaplatit;
     
-    private int vybranyStul = 0;
+    //private int vybranyStul = 0;
+    
     private MealService service;
         
     private final int POLEVKY = 1;
@@ -157,7 +158,7 @@ public class MainController implements Initializable {
                 Label alergenyText = (Label) panel.lookup("#alergenyText" + typ);
                 Button pridat = (Button) panel.lookup("#pridat" + typ);
                 alergenyText.setVisible(true);
-                if(vybranyStul == 0)
+                if(service.getChosenTable() == 0)
                 {
                     pridat.setDisable(true);
                 }
@@ -222,7 +223,7 @@ public class MainController implements Initializable {
         {
             if(stul.getText().equals(stoly[i]))
             {
-                vybranyStul = Integer.valueOf(stul.getText());
+                service.setChosenTable(Integer.valueOf(stul.getText()));
                 stul.setDisable(true);
                 upozorneni.setVisible(false);
                 for(int j=1; j<5; j++)

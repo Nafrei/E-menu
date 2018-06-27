@@ -13,7 +13,7 @@ public class Help {
     
      public static String getHelp(){
     
-    String tutorial ="Hello, this is our marvellous tutorial";
+    String tutorial ="Vitej u napovedy E-Jidelniho listku \n Jidlo si objednas tim, ze si jej vyberes v seznamu a zmacknes tlacitko ... ";
         
     
     return tutorial;

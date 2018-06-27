@@ -5,13 +5,7 @@
  */
 package cz.pavi.ocka.el_jidelni_listek;
 
-import java.util.ArrayList;
-import javafx.beans.property.ObjectProperty;
-import javafx.beans.property.SimpleObjectProperty;
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.property.StringProperty;
 import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 
 /**
  *
