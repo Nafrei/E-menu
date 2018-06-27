@@ -10,6 +10,8 @@ import java.util.ArrayList;
 import java.util.ResourceBundle;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -51,11 +53,12 @@ public class MainController implements Initializable {
     
     @FXML
     private Text upozorneni;
+    
+    @FXML
+    private Label pocetKusu;
 
     @FXML
     private Button zaplatit;
-    
-    //private int vybranyStul = 0;
     
     private MealService service;
         
@@ -88,7 +91,23 @@ public class MainController implements Initializable {
             pridat.setVisible(false);
         }
         
+        setEventHandlerOnAddOrderButtons();
         kontrolujZmenuTabu(); 
+    }
+    
+    void setEventHandlerOnAddOrderButtons()
+    {
+        for(int i=1; i < 5 ; i++)
+        {
+            Button buttonAdd = (Button) panel.lookup("#pridat"+i);
+        
+            buttonAdd.setOnAction(new EventHandler<ActionEvent>() {
+                @Override public void handle(ActionEvent e) {
+                    System.out.println("nazdar bazar");
+                }
+                
+            });
+    }
     }
     
     /**
@@ -233,7 +252,6 @@ public class MainController implements Initializable {
                 }
             }
         }
-    
     }
     
     

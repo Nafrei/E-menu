@@ -19,6 +19,10 @@ public class MealServiceImplementation implements MealService {
     
     int chosenTable = 0;
     
+    int numberOfOrderedMeals = 0;
+    
+    private ObservableList<Meal> chosenMeals = null;
+    
     private ObservableList<Meal> currentMeals = null;
     
     private ObservableList<String> sideDishes = null;
@@ -79,6 +83,21 @@ public class MealServiceImplementation implements MealService {
     @Override
     public int getChosenTable() {
         return chosenTable;
+    }
+
+    @Override
+    public ObservableList<Meal> getChosenMeals() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void setNumberOfOrderedMeals(int number) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public int getNumberOfOrderedMeals() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }
