@@ -20,7 +20,7 @@ import javafx.scene.image.ImageView;
 public class Meal {
     
     private String nazev;
-    private String popis;
+    private String description;
     private String alergeny;
     private String gramy;
     private int typ;
@@ -36,7 +36,7 @@ public class Meal {
     
     public Meal(String nazev, String popis, String alergeny, String gramy, int cena, int typ, Image obrazek) {
         this.nazev = nazev;
-        this.popis = popis;
+        this.description = popis;
         this.alergeny = alergeny;
         this.gramy = gramy;
         this.obrazek = obrazek;
@@ -57,7 +57,7 @@ public class Meal {
     
     public String getPopis()
     {
-        return popis;
+        return description;
     }
     
     public String getAlergeny()
