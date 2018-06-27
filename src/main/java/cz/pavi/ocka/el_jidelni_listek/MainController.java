@@ -78,21 +78,20 @@ public class MainController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) 
     {
-<<<<<<< HEAD
-=======
 
->>>>>>> 974e0803a929f2bdf2a449bc08592cccefd4b0b5
         soups.setGraphic(getObrazekZOdkazu("file:images/polevka2_1.png"));
         mainCourses.setGraphic(getObrazekZOdkazu("file:images/smazak1_2.png"));
         sideDishesBox.setVisible(false);
 
         //soups.setGraphic(getObrazekZOdkazu("file:images/polevka2_1.png"));
         //hlavniJidla.setGraphic(getObrazekZOdkazu("file:images/smazak1_2.png"));
-<<<<<<< HEAD
-        boxPriloh.setVisible(false);
-=======
+
         sideDishesBox.setVisible(false);
->>>>>>> 974e0803a929f2bdf2a449bc08592cccefd4b0b5
+
+        sideDishesBox.setVisible(false);
+
+        sideDishesBox.setVisible(false);
+
 
         
         
@@ -156,10 +155,7 @@ public class MainController implements Initializable {
 
         nastavList(SOUPS, soupsList);
 
-<<<<<<< HEAD
-        nastavList(POLEVKY, listPolevek);
-=======
->>>>>>> 974e0803a929f2bdf2a449bc08592cccefd4b0b5
+
         setEventHandlerOnAddOrderButtons();
 
     }
