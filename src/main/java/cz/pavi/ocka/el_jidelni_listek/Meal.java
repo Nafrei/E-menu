@@ -23,7 +23,7 @@ public class Meal {
     private String description;
     private String alergeny;
     private String gramy;
-    private int typ;
+    private int type;
     private Image obrazek;
     private int cena;
    
@@ -40,7 +40,7 @@ public class Meal {
         this.alergeny = alergeny;
         this.gramy = gramy;
         this.obrazek = obrazek;
-        this.typ = typ;
+        this.type = typ;
         this.cena = cena;
     }
     
@@ -82,7 +82,7 @@ public class Meal {
     
     public int getTyp()
     {
-        return typ;
+        return type;
     }
     
     
