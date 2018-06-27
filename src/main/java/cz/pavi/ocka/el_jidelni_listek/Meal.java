@@ -15,8 +15,8 @@ public class Meal {
     
     private String mealName;
     private String description;
-    private String allergeny;
-    private String grams;
+    private String allergens;
+    private String quantity;
     private int type;
     private Image picture;
     private int price;
@@ -28,54 +28,54 @@ public class Meal {
         
     }
     
-    public Meal(String nazev, String popis, String alergeny, String gramy, int cena, int typ, Image obrazek) {
-        this.mealName = nazev;
-        this.description = popis;
-        this.allergeny = alergeny;
-        this.grams = gramy;
-        this.picture = obrazek;
-        this.type = typ;
-        this.price = cena;
+    public Meal(String name, String description, String allergens, String quantity, int price, int type, Image picture) {
+        this.mealName = name;
+        this.description = description;
+        this.allergens = allergens;
+        this.quantity = quantity;
+        this.picture = picture;
+        this.type = type;
+        this.price = price;
        
     }
     
-    public Meal(String nazev, int cena)
+    public Meal(String name, int price)
     {
-        this.mealName = nazev;
-        this.price = cena;
+        this.mealName = name;
+        this.price = price;
     }
     
-    public String getNazev()
+    public String getName()
     {
         return mealName;
     }
     
-    public String getPopis()
+    public String getDescription()
     {
         return description;
     }
     
-    public String getAlergeny()
+    public String getAllergens()
     {
-        return allergeny;
+        return allergens;
     }
     
-    public String getGramy()
+    public String getQuantity()
     {
-        return grams;
+        return quantity;
     }
     
-    public int getCena()
+    public int getPrice()
     {
         return price;
     }
     
-    public Image getObrazek()
+    public Image getPicture()
     {
         return picture;
     }
     
-    public int getTyp()
+    public int getType()
     {
         return type;
     }

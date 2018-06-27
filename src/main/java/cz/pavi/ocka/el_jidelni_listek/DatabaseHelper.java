@@ -57,55 +57,55 @@ public class DatabaseHelper {
     
     /**
      * Načte všechna data z databáze Jídel podle typu
-     * @param cisloTypu Typ jídla
+     * @param typeNumber Typ jídla
      * @return Kolekce jídel
      */
-    public ArrayList<Meal> nactiDataZDatabaze(int cisloTypu) 
+    public ArrayList<Meal> nactiDataZDatabaze(int typeNumber) 
     {
-        ArrayList<Meal> jidla = new ArrayList<>();
+        ArrayList<Meal> meals = new ArrayList<>();
         Meal j = null;
         try
         {
-            final String dotaz = "SELECT * from Jidla WHERE Typ = ?";
-            final PreparedStatement ps = (PreparedStatement) conn.prepareStatement(dotaz); 
-            ps.setInt(1, cisloTypu);
-            final ResultSet vysledek = ps.executeQuery();
+            final String query = "SELECT * from Jidla WHERE Typ = ?";
+            final PreparedStatement ps = (PreparedStatement) conn.prepareStatement(query); 
+            ps.setInt(1, typeNumber);
+            final ResultSet result = ps.executeQuery();
         
-            while(vysledek.next())
+            while(result.next())
             {
                 
-                String nazev = vysledek.getString(2);
-                int cena = vysledek.getInt(5);
+                String name = result.getString(2);
+                int price = result.getInt(5);
                 
-                if(cisloTypu != 5)
+                if(typeNumber != 5)
                 {
-                int typ = vysledek.getInt(8);
-                String popis = vysledek.getString(4);
+                int type = result.getInt(8);
+                String description = result.getString(4);
                 
-                String alergeny = vysledek.getString(6);
-                String gramy = vysledek.getString(7);
+                String allergens = result.getString(6);
+                String quantity = result.getString(7);
                 
-                InputStream binaryStream = vysledek.getBinaryStream(3);
+                InputStream binaryStream = result.getBinaryStream(3);
                 BufferedImage bf = ImageIO.read(binaryStream);
-                Image obrazek = SwingFXUtils.toFXImage(bf, null);
+                Image picture = SwingFXUtils.toFXImage(bf, null);
             
-                j = new Meal(nazev, popis, alergeny, gramy, cena, typ, obrazek);
+                j = new Meal(name, description, allergens, quantity, price, type, picture);
                 }
                 else
                 {
-                    j = new Meal(nazev, cena);
+                    j = new Meal(name, price);
                 }
-                jidla.add(j);
+                meals.add(j);
             }
             ps.close();
-            vysledek.close();
+            result.close();
         
         }
         catch(Exception ex)
         {
-            System.out.println("chyba pri prenosu z databaze");
+            System.out.println("Chyba pri prenosu z databaze.");
         }
-        return jidla;
+        return meals;
     }
     
     

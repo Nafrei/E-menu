@@ -38,16 +38,16 @@ public class MealServiceImplementation implements MealService {
 
     @Override
     public ObservableList<String> getSideDishes() {
-        ArrayList<Meal> list_z_Databaze = dt.nactiDataZDatabaze(5);
+        ArrayList<Meal> databaseList = dt.nactiDataZDatabaze(5);
         
-        ArrayList<String> infoPrilohy = new ArrayList<>();
-        for(Meal j: list_z_Databaze)
+        ArrayList<String> infoSideDishes = new ArrayList<>();
+        for(Meal j: databaseList)
         {
-            String nazev = j.getNazev();
-            String cena = String.valueOf(j.getCena());
-            infoPrilohy.add(nazev + " (" + cena + " Kč)");
+            String name = j.getNazev();
+            String price = String.valueOf(j.getCena());
+            infoSideDishes.add(name + " (" + price + " Kč)");
         }
-        sideDishes = FXCollections.observableArrayList (infoPrilohy);
+        sideDishes = FXCollections.observableArrayList (infoSideDishes);
         
         return sideDishes;
     }
@@ -59,8 +59,8 @@ public class MealServiceImplementation implements MealService {
      */
     @Override
     public ObservableList<Meal> getCurrentMeal(int type) {
-        ArrayList<Meal> list_z_Databaze = dt.nactiDataZDatabaze(type);
-        currentMeals = FXCollections.observableArrayList (list_z_Databaze);
+        ArrayList<Meal> databaseList = dt.nactiDataZDatabaze(type);
+        currentMeals = FXCollections.observableArrayList (databaseList);
         
         return currentMeals;
     }
