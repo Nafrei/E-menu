@@ -37,6 +37,10 @@ public class MainController implements Initializable {
     private Tab soups;
     @FXML
     private Tab mainCourses;
+    @FXML
+    private Tab desserts;
+    @FXML
+    private Tab drinks;
     
     @FXML
     private ChoiceBox sideDishesBox;
@@ -52,9 +56,15 @@ public class MainController implements Initializable {
     
     @FXML
     private Label numberOfItems;
+    
+    @FXML
+    private Label celkovaCena;
 
     @FXML
     private Button pay;
+    
+    @FXML
+    private ImageView kosik;
     
     private MealService service;
     
@@ -78,7 +88,11 @@ public class MainController implements Initializable {
     {
 
         soups.setGraphic(getObrazekZOdkazu("file:images/polevka2_1.png"));
-        mainCourses.setGraphic(getObrazekZOdkazu("file:images/smazak1_2.png"));
+        mainCourses.setGraphic(getObrazekZOdkazu("file:images/smazak1_4.png"));
+        desserts.setGraphic(getObrazekZOdkazu("file:images/dezerty_zmrzlina.png"));
+        drinks.setGraphic(getObrazekZOdkazu("file:images/napoj_cappuccino.png"));
+        kosik.setImage(new Image("file:images/kosik.png"));
+        
         sideDishesBox.setVisible(false);
 
         for(int i=1; i<5; i++)
@@ -101,10 +115,12 @@ public class MainController implements Initializable {
         
             buttonAdd.setOnAction(new EventHandler<ActionEvent>() {
                 @Override public void handle(ActionEvent e) {
-                    service.setNumberOfOrderedMeals(service.getNumberOfOrderedMeals() + 1);
+                    //service.setNumberOfOrderedMeals(service.getNumberOfOrderedMeals() + 1);
                     ListView list = (ListView)panel.lookup("#list"+vybranyTyp);
                     Meal selectedMeal = (Meal)list.getSelectionModel().getSelectedItem();
-                    service.addToOrder();
+                    service.addToOrder(selectedMeal);
+                    numberOfItems.setText(String.valueOf(service.getNumberOfOrderedMeals()));
+                    celkovaCena.setText(String.valueOf(service.getPriceOfChosenMeals() + " Kč"));
                 }
                 
             });
@@ -128,6 +144,14 @@ public class MainController implements Initializable {
             else if(newValue == mainCourses)
             {
                 nastavList(MAIN_COURSES, (ListView)panel.lookup("#list2"));
+            }
+            else if(newValue == desserts)
+            {
+                nastavList(DESSERTS, (ListView)panel.lookup("#list3"));
+            }
+            else if(newValue == drinks)
+            {
+                nastavList(DRINKS, (ListView)panel.lookup("#list4"));
             }
         }
         });
@@ -250,11 +274,13 @@ public class MainController implements Initializable {
         {
             if(table.getText().equals(stoly[i]))
             {
+                System.out.println("jsem tu");
                 service.setChosenTable(Integer.valueOf(table.getText()));
                 table.setDisable(true);
                 warning.setVisible(false);
                 for(int j=1; j<5; j++)
                 {
+                    System.out.println("ahoj");
                     Button pridat = (Button) panel.lookup("#pridat" + i);
                     pridat.setDisable(false);
                 }

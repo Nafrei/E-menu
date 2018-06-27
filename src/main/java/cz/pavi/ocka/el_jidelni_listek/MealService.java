@@ -18,9 +18,9 @@ public interface MealService
     
     ObservableList<Meal> getCurrentMeal(int type);
     
-    ObservableList<Meal> getChosenMeals();
+    ArrayList<Meal> getChosenMeals();
     
-    void addToOrder();
+    void addToOrder(Meal meal);
     
     void deleteFromOrder(Meal meal);
     
@@ -29,8 +29,8 @@ public interface MealService
     void setChosenTable(int number); 
     
     int getChosenTable();
-    
-    void setNumberOfOrderedMeals(int number);
-    
+
     int getNumberOfOrderedMeals();
+    
+    int getPriceOfChosenMeals();
 }

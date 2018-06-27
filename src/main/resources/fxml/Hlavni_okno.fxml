@@ -12,7 +12,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="hlavniOkno" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="422.0" prefWidth="649.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cz.pavi.ocka.el_jidelni_listek.MainController">
+<AnchorPane fx:id="hlavniOkno" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="429.0" prefWidth="649.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cz.pavi.ocka.el_jidelni_listek.MainController">
    <children>
       <TabPane fx:id="panel" layoutY="61.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="359.0" prefWidth="649.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
         <tabs>
@@ -35,7 +35,7 @@
                                  </font>
                               </Label>
                               <Button fx:id="pridat1" layoutX="291.0" layoutY="262.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="121.0" text="Přidat k objednávce" />
-                              <Label fx:id="popis1" wrapText="true" layoutX="260.0" layoutY="17.0" prefHeight="159.0" prefWidth="175.0" />
+                              <Label fx:id="popis1" layoutX="260.0" layoutY="17.0" prefHeight="159.0" prefWidth="175.0" wrapText="true" />
                               <Label fx:id="alergeny1" layoutX="95.0" layoutY="273.0" prefHeight="17.0" prefWidth="137.0" />
                            </children>
                         </AnchorPane>
@@ -64,7 +64,7 @@
                                  </font>
                               </Label>
                               <Button fx:id="pridat2" layoutX="291.0" layoutY="262.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="121.0" text="Přidat k objednávce" />
-                              <Label fx:id="popis2" wrapText="true" layoutX="260.0" layoutY="17.0" prefHeight="159.0" prefWidth="175.0" />
+                              <Label fx:id="popis2" layoutX="260.0" layoutY="17.0" prefHeight="159.0" prefWidth="175.0" wrapText="true" />
                               <ChoiceBox fx:id="sideDishesBox" layoutX="273.0" layoutY="191.0" prefWidth="150.0" />
                               <Label fx:id="alergeny2" layoutX="95.0" layoutY="273.0" prefHeight="17.0" prefWidth="137.0" />
                            </children>
@@ -73,11 +73,11 @@
                   </AnchorPane>
             </content>
           </Tab>
-            <Tab text="Dezerty">
+            <Tab fx:id="desserts" text="Dezerty">
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <ListView fx:id="list3" layoutX="203.0" layoutY="-2.0" prefHeight="332.0" prefWidth="207.0" />
+                        <ListView fx:id="list3" layoutX="203.0" layoutY="-2.0" prefHeight="332.0" prefWidth="207.0" AnchorPane.leftAnchor="0.0" />
                         <AnchorPane fx:id="panelDetailu2" layoutX="203.0" layoutY="-2.0" prefHeight="333.0" prefWidth="445.0">
                            <children>
                               <ImageView fx:id="obrazek3" fitHeight="157.0" fitWidth="200.0" layoutX="23.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true" />
@@ -93,18 +93,18 @@
                                  </font>
                               </Label>
                               <Button fx:id="pridat3" layoutX="291.0" layoutY="262.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="121.0" text="Přidat k objednávce" />
-                              <Label fx:id="popis3" wrapText="true" layoutX="260.0" layoutY="17.0" prefHeight="159.0" prefWidth="175.0" />
+                              <Label fx:id="popis3" layoutX="260.0" layoutY="17.0" prefHeight="159.0" prefWidth="175.0" wrapText="true" />
                               <Label fx:id="alergeny3" layoutX="95.0" layoutY="273.0" prefHeight="17.0" prefWidth="137.0" />
                            </children>
                         </AnchorPane>
                      </children></AnchorPane>
               </content>
             </Tab>
-            <Tab text="Nápoje">
+            <Tab fx:id="drinks" text="Nápoje">
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="330.0" prefWidth="638.0">
                      <children>
-                        <ListView fx:id="list4" layoutX="203.0" layoutY="-2.0" prefHeight="332.0" prefWidth="207.0" />
+                        <ListView fx:id="list4" layoutX="203.0" layoutY="-2.0" prefHeight="332.0" prefWidth="207.0" AnchorPane.leftAnchor="0.0" />
                         <AnchorPane fx:id="panelDetailu3" layoutX="203.0" layoutY="-2.0" prefHeight="333.0" prefWidth="445.0">
                            <children>
                               <ImageView fx:id="obrazek4" fitHeight="157.0" fitWidth="200.0" layoutX="23.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true" />
@@ -119,8 +119,8 @@
                                     <Font name="System Bold" size="12.0" />
                                  </font>
                               </Label>
-                              <Button fx:id="pridat4" layoutX="291.0" layoutY="262.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="121.0" text="Přidat k objednávce" />
-                              <Label fx:id="popis4" wrapText="true" layoutX="260.0" layoutY="17.0" prefHeight="159.0" prefWidth="175.0" />
+                              <Button fx:id="pridat4" layoutX="309.0" layoutY="262.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="121.0" text="Přidat k objednávce" />
+                              <Label fx:id="popis4" layoutX="260.0" layoutY="17.0" prefHeight="159.0" prefWidth="175.0" wrapText="true" />
                               <Label fx:id="alergeny4" layoutX="95.0" layoutY="273.0" prefHeight="17.0" prefWidth="137.0" />
                            </children>
                         </AnchorPane>
@@ -129,8 +129,7 @@
             </Tab>
         </tabs>
       </TabPane>
-      <Button fx:id="pay" layoutX="492.0" layoutY="13.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="127.0" style="-fx-background-color: #7CFC00;" text="Zaplatit" />
-      <Text layoutX="244.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Jidelni listek" wrappingWidth="63.6328125" />
+      <Button fx:id="pay" layoutX="507.0" layoutY="12.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="127.0" style="-fx-background-color: #7CFC00;" text="Zaplatit" />
       <Text layoutX="14.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Stůl:" wrappingWidth="41.19647216796875">
          <font>
             <Font size="17.0" />
@@ -142,7 +141,11 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </Text>
-      <ImageView fitHeight="39.0" fitWidth="41.0" layoutX="362.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
-      <Label fx:id="numberOfItems" layoutX="334.0" layoutY="25.0" text="Label" />
+      <ImageView fx:id="kosik" fitHeight="39.0" fitWidth="41.0" layoutX="353.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
+      <Label fx:id="numberOfItems" layoutX="334.0" layoutY="25.0" text="0" textFill="#1e79da">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+      <Label fx:id="celkovaCena" layoutX="415.0" layoutY="25.0" prefHeight="17.0" prefWidth="71.0" text="Label" />
    </children>
 </AnchorPane>

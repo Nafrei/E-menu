@@ -21,12 +21,7 @@ public class Meal {
     private Image picture;
     private int price;
    
-   
-
-    public Meal()
-    {
-        
-    }
+  
     
 
     public Meal(String name, String description, String allergens, String quantity, int price, int type, Image picture) {

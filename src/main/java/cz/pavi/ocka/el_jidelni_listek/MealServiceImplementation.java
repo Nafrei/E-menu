@@ -21,7 +21,7 @@ public class MealServiceImplementation implements MealService {
     
     int numberOfOrderedMeals = 0;
     
-    private ObservableList<Meal> chosenMeals = null;
+    private ArrayList<Meal> chosenMeals = null;
     
     private ObservableList<Meal> currentMeals = null;
     
@@ -33,6 +33,7 @@ public class MealServiceImplementation implements MealService {
     public MealServiceImplementation()
     {
         dt = new DatabaseHelper();
+        chosenMeals = new ArrayList<Meal>();
     }
 
 
@@ -86,23 +87,30 @@ public class MealServiceImplementation implements MealService {
     }
 
     @Override
-    public ObservableList<Meal> getChosenMeals() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public ArrayList<Meal> getChosenMeals() {
+        return chosenMeals;
     }
 
-    @Override
-    public void setNumberOfOrderedMeals(int number) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 
     @Override
     public int getNumberOfOrderedMeals() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return chosenMeals.size();
     }
 
     @Override
-    public void addToOrder(Meal meal) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void deleteFromOrder(Meal meal) {
+        chosenMeals.remove(meal);
+    }
+
+    @Override
+    public int getPriceOfChosenMeals() {
+        int sum = 0;
+        for(Meal j: chosenMeals)
+        {
+            sum += j.getPrice();
+        }
+        
+        return sum;
     }
     
 }
