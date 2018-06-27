@@ -43,8 +43,8 @@ public class MealServiceImplementation implements MealService {
         ArrayList<String> infoSideDishes = new ArrayList<>();
         for(Meal j: databaseList)
         {
-            String name = j.getNazev();
-            String price = String.valueOf(j.getCena());
+            String name = j.getName();
+            String price = String.valueOf(j.getPrice());
             infoSideDishes.add(name + " (" + price + " Kč)");
         }
         sideDishes = FXCollections.observableArrayList (infoSideDishes);

@@ -71,7 +71,7 @@ public class MainController implements Initializable {
     
     
     /**
-     * Inicializační metoda. Nastaví ikony tabům
+     * Inicializační metoda. Nastaví ikony tabůmss
      * @param url 
      * @param rb
      */
@@ -79,14 +79,21 @@ public class MainController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) 
     {
 <<<<<<< HEAD
+=======
+
+>>>>>>> 974e0803a929f2bdf2a449bc08592cccefd4b0b5
         soups.setGraphic(getObrazekZOdkazu("file:images/polevka2_1.png"));
         mainCourses.setGraphic(getObrazekZOdkazu("file:images/smazak1_2.png"));
         sideDishesBox.setVisible(false);
-=======
+
         //soups.setGraphic(getObrazekZOdkazu("file:images/polevka2_1.png"));
         //hlavniJidla.setGraphic(getObrazekZOdkazu("file:images/smazak1_2.png"));
+<<<<<<< HEAD
         boxPriloh.setVisible(false);
->>>>>>> 04fd33b405e3012d86ce14e53926ffecf98396a2
+=======
+        sideDishesBox.setVisible(false);
+>>>>>>> 974e0803a929f2bdf2a449bc08592cccefd4b0b5
+
         
         
         for(int i=1; i<5; i++)
@@ -146,12 +153,15 @@ public class MainController implements Initializable {
     public void setModel(MealService service)
     {
         this.service = service;
-<<<<<<< HEAD
+
         nastavList(SOUPS, soupsList);
-=======
+
+<<<<<<< HEAD
         nastavList(POLEVKY, listPolevek);
+=======
+>>>>>>> 974e0803a929f2bdf2a449bc08592cccefd4b0b5
         setEventHandlerOnAddOrderButtons();
->>>>>>> 04fd33b405e3012d86ce14e53926ffecf98396a2
+
     }
         
     /**
