@@ -28,6 +28,7 @@ public class Meal {
         
     }
     
+
     public Meal(String name, String description, String allergens, String quantity, int price, int type, Image picture) {
         this.mealName = name;
         this.description = description;
@@ -36,7 +37,6 @@ public class Meal {
         this.picture = picture;
         this.type = type;
         this.price = price;
-       
     }
     
     public Meal(String name, int price)
