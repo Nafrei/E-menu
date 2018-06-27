@@ -66,8 +66,8 @@ public class MealServiceImplementation implements MealService {
     }
 
     @Override
-    public void addToOrder() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void addToOrder(Meal meal) {
+        chosenMeals.add(meal);
     }
 
     @Override
@@ -97,6 +97,11 @@ public class MealServiceImplementation implements MealService {
 
     @Override
     public int getNumberOfOrderedMeals() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void addToOrder(Meal meal) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     

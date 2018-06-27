@@ -57,6 +57,8 @@ public class MainController implements Initializable {
     private Button pay;
     
     private MealService service;
+    
+    private int vybranyTyp = 1;
         
     private final int SOUPS = 1;
     private final int MAIN_COURSES = 2;
@@ -99,8 +101,10 @@ public class MainController implements Initializable {
         
             buttonAdd.setOnAction(new EventHandler<ActionEvent>() {
                 @Override public void handle(ActionEvent e) {
-            service.setNumberOfOrderedMeals(service.getNumberOfOrderedMeals() + 1);
-
+                    service.setNumberOfOrderedMeals(service.getNumberOfOrderedMeals() + 1);
+                    ListView list = (ListView)panel.lookup("#list"+vybranyTyp);
+                    Meal selectedMeal = (Meal)list.getSelectionModel().getSelectedItem();
+                    service.addToOrder();
                 }
                 
             });
@@ -119,11 +123,11 @@ public class MainController implements Initializable {
         {
             if(newValue == soups) 
             {
-                nastavList(SOUPS, soupsList);
+                nastavList(SOUPS, (ListView)panel.lookup("#list1"));
             }
             else if(newValue == mainCourses)
             {
-                nastavList(MAIN_COURSES, mainCoursesList);
+                nastavList(MAIN_COURSES, (ListView)panel.lookup("#list2"));
             }
         }
         });
@@ -137,7 +141,7 @@ public class MainController implements Initializable {
     {
         this.service = service;
 
-        nastavList(SOUPS, soupsList);
+        nastavList(SOUPS, (ListView)panel.lookup("#list1"));
 
 
         setEventHandlerOnAddOrderButtons();
@@ -160,6 +164,8 @@ public class MainController implements Initializable {
             //alergenyTextStary.setVisible(false);
             if(newValue != null)
             {
+                vybranyTyp = newValue.getType();
+                
                 sideDishesBox.setVisible(false);
                 ImageView obrazek = (ImageView) panel.lookup("#obrazek" + typ);
                 obrazek.setImage(newValue.getPicture());

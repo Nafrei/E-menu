@@ -37,12 +37,12 @@ public class DatabaseHelper {
         try
         {
             String driver = "com.mysql.jdbc.Driver"; //Do proměnné typu String uloží driver
-            String url = "jdbc:mysql://sql7.freemysqlhosting.net:3306/sql7244677?"; //Do proměnné typu String uloží url k databázi
+            String url = "jdbc:mysql://sql7.freemysqlhosting.net:3306/sql7244887?"; //Do proměnné typu String uloží url k databázi
             Class.forName(driver);
-            conn = (Connection) DriverManager.getConnection(url, "sql7244677", "CGzpYW3vTn"); //Do proměnné typu Connection uloží připojení k databázi
+            conn = (Connection) DriverManager.getConnection(url, "sql7244887", "HYudjNBdUy"); //Do proměnné typu Connection uloží připojení k databázi
             if(conn.isClosed()) //Podmínka proběhne, pokud je připojení zavřeno
             {
-                conn = (Connection) DriverManager.getConnection(url, "sql7244677", "CGzpYW3vTn"); //Znovu se připojí k databázi
+                conn = (Connection) DriverManager.getConnection(url, "sql7244887", "HYudjNBdUy"); //Znovu se připojí k databázi
             }
         }
         catch(Exception ex)
