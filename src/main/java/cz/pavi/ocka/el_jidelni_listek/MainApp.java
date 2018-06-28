@@ -36,9 +36,10 @@ public class MainApp extends Application {
         FXMLLoader listLoader = new FXMLLoader(getClass().getResource("/fxml/Hlavni_okno.fxml"));
         root.setCenter((Node) listLoader.load());
         MainController kontroler = listLoader.getController();
-        kontroler.setModel(service);
+        
          
         Scene scene = new Scene(root);
+        kontroler.setModel(service, scene);
         scene.getStylesheets().add("/styles/HlavniOkno.css");
         stage.setResizable(false);
         stage.setScene(scene);

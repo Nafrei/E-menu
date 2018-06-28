@@ -6,6 +6,7 @@
 package cz.pavi.ocka.el_jidelni_listek;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import javafx.collections.ObservableList;
 
 /**
@@ -14,13 +15,13 @@ import javafx.collections.ObservableList;
  */
 public interface MealService 
 {
-    ObservableList<String> getSideDishes();
+    ObservableList<Meal> getSideDishes();
     
     ObservableList<Meal> getCurrentMeal(int type);
     
-    ArrayList<Meal> getChosenMeals();
+    HashMap<Meal, Meal> getChosenMeals();
     
-    void addToOrder(Meal meal);
+    void addToOrder(Meal meal, Meal sideDishes);
     
     void deleteFromOrder(Meal meal);
     

@@ -6,6 +6,7 @@
 package cz.pavi.ocka.el_jidelni_listek;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import javafx.collections.ObservableList;
 
 /**
@@ -15,7 +16,7 @@ import javafx.collections.ObservableList;
 public class MealServiceMock implements MealService {
 
     @Override
-    public ObservableList<String> getSideDishes() {
+    public ObservableList<Meal> getSideDishes() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
         /*
         ArrayList<Meal> databaseList = {{"Bramboráky", "35"}{"Hranolky", "30"}}
@@ -30,15 +31,7 @@ public class MealServiceMock implements MealService {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    @Override
-    public ArrayList<Meal> getChosenMeals() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void addToOrder(Meal meal) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+   
 
     @Override
     public void order() {
@@ -70,6 +63,16 @@ public class MealServiceMock implements MealService {
 
     @Override
     public int getPriceOfChosenMeals() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void addToOrder(Meal meal, Meal sideDishes) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public HashMap<Meal, Meal> getChosenMeals() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 

@@ -6,6 +6,7 @@
 package cz.pavi.ocka.el_jidelni_listek;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
@@ -21,11 +22,11 @@ public class MealServiceImplementation implements MealService {
     
     int numberOfOrderedMeals = 0;
     
-    private ArrayList<Meal> chosenMeals = null;
+    private HashMap<Meal, Meal> chosenMeals = null;
     
     private ObservableList<Meal> currentMeals = null;
     
-    private ObservableList<String> sideDishes = null;
+    private ObservableList<Meal> sideDishes = null;
     
     /**
      * Konstruktor. Vytvoří novou instanci Databazovniku.
@@ -33,12 +34,12 @@ public class MealServiceImplementation implements MealService {
     public MealServiceImplementation()
     {
         dt = new DatabaseHelper();
-        chosenMeals = new ArrayList<Meal>();
+        chosenMeals = new HashMap<Meal, Meal>();
     }
 
 
     @Override
-    public ObservableList<String> getSideDishes() {
+    public ObservableList<Meal> getSideDishes() {
         ArrayList<Meal> databaseList = dt.nactiDataZDatabaze(5);
         
         ArrayList<String> infoSideDishes = new ArrayList<>();
@@ -48,7 +49,7 @@ public class MealServiceImplementation implements MealService {
             String price = String.valueOf(j.getPrice());
             infoSideDishes.add(name + " (" + price + " Kč)");
         }
-        sideDishes = FXCollections.observableArrayList (infoSideDishes);
+        sideDishes = FXCollections.observableArrayList (databaseList);
         
         return sideDishes;
     }
@@ -67,8 +68,8 @@ public class MealServiceImplementation implements MealService {
     }
 
     @Override
-    public void addToOrder(Meal meal) {
-        chosenMeals.add(meal);
+    public void addToOrder(Meal meal, Meal sideDishes) {
+        chosenMeals.put(meal, sideDishes);
     }
 
     @Override
@@ -87,7 +88,7 @@ public class MealServiceImplementation implements MealService {
     }
 
     @Override
-    public ArrayList<Meal> getChosenMeals() {
+    public HashMap<Meal, Meal> getChosenMeals() {
         return chosenMeals;
     }
 
@@ -105,10 +106,15 @@ public class MealServiceImplementation implements MealService {
     @Override
     public int getPriceOfChosenMeals() {
         int sum = 0;
-        for(Meal j: chosenMeals)
+        for(Meal j: chosenMeals.keySet())
         {
             sum += j.getPrice();
+            if(chosenMeals.get(j) != null)
+            {
+                sum+= chosenMeals.get(j).getPrice();
+            }
         }
+        
         
         return sum;
     }

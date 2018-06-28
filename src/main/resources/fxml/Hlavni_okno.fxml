@@ -129,7 +129,7 @@
             </Tab>
         </tabs>
       </TabPane>
-      <Button fx:id="pay" layoutX="507.0" layoutY="12.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="127.0" style="-fx-background-color: #7CFC00;" text="Zaplatit" />
+      <Button fx:id="pay" layoutX="507.0" layoutY="12.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="127.0" style="-fx-background-color: #7CFC00;" text="Objednat" />
       <Text layoutX="14.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Stůl:" wrappingWidth="41.19647216796875">
          <font>
             <Font size="17.0" />
