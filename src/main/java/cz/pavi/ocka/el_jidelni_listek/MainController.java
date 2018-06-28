@@ -1,5 +1,6 @@
 <<<<<<< HEAD:src/main/java/cz/pavi/ocka/el_jidelni_listek/MainController.java
 <<<<<<< HEAD:src/main/java/cz/pavi/ocka/el_jidelni_listek/MainController.java
+<<<<<<< HEAD:src/main/java/cz/pavi/ocka/el_jidelni_listek/MainController.java
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -493,6 +494,8 @@ public class MainController implements Initializable {
 =======
 =======
 >>>>>>> parent of 162a752... Merge branch 'master' of https://github.com/Nafrei/E-menu:UAI_pub-client/src/main/java/cz/pavi/ocka/el_jidelni_listek/MainController.java
+=======
+>>>>>>> parent of 162a752... Merge branch 'master' of https://github.com/Nafrei/E-menu:UAI_pub-client/src/main/java/cz/pavi/ocka/el_jidelni_listek/MainController.java
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -899,6 +902,9 @@ public class MainController implements Initializable {
     
 
 <<<<<<< HEAD:src/main/java/cz/pavi/ocka/el_jidelni_listek/MainController.java
+<<<<<<< HEAD:src/main/java/cz/pavi/ocka/el_jidelni_listek/MainController.java
+>>>>>>> parent of 162a752... Merge branch 'master' of https://github.com/Nafrei/E-menu:UAI_pub-client/src/main/java/cz/pavi/ocka/el_jidelni_listek/MainController.java
+=======
 >>>>>>> parent of 162a752... Merge branch 'master' of https://github.com/Nafrei/E-menu:UAI_pub-client/src/main/java/cz/pavi/ocka/el_jidelni_listek/MainController.java
 =======
 >>>>>>> parent of 162a752... Merge branch 'master' of https://github.com/Nafrei/E-menu:UAI_pub-client/src/main/java/cz/pavi/ocka/el_jidelni_listek/MainController.java
