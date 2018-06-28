@@ -22,6 +22,15 @@ public class Meal {
         this.price = price;
     }
 
+    public Meal(String name, String description, String allergens, String quantity, int price, int type) {
+        this.mealName = name;
+        this.description = description;
+        this.allergens = allergens;
+        this.quantity = quantity;
+        this.type = type;
+        this.price = price;
+    }
+
     public Meal(String name, int price) {
         this.mealName = name;
         this.price = price;

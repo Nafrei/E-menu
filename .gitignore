@@ -1,4 +1,4 @@
 target/
-UAI_pub-client/target
-UAI_pub-common/target
-UAI_pub-server/target
+UAI_pub-client/target/
+UAI_pub-common/target/
+UAI_pub-server/target/
