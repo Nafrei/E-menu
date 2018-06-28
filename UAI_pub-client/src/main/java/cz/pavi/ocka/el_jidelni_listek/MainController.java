@@ -1,5 +1,8 @@
+<<<<<<< HEAD:UAI_pub-client/src/main/java/cz/pavi/ocka/el_jidelni_listek/MainController.java
 <<<<<<< HEAD:src/main/java/cz/pavi/ocka/el_jidelni_listek/MainController.java
 <<<<<<< HEAD:UAI_pub-client/src/main/java/cz/pavi/ocka/el_jidelni_listek/MainController.java
+=======
+>>>>>>> fb9a2342226dfb6daa9f07345f7b90f540defc38:UAI_pub-client/src/main/java/cz/pavi/ocka/el_jidelni_listek/MainController.java
 =======
 >>>>>>> fb9a2342226dfb6daa9f07345f7b90f540defc38:UAI_pub-client/src/main/java/cz/pavi/ocka/el_jidelni_listek/MainController.java
 /*
@@ -407,6 +410,7 @@ public class MainController implements Initializable {
     
     
 
+<<<<<<< HEAD:UAI_pub-client/src/main/java/cz/pavi/ocka/el_jidelni_listek/MainController.java
 <<<<<<< HEAD:src/main/java/cz/pavi/ocka/el_jidelni_listek/MainController.java
 =======
 /*
@@ -900,5 +904,7 @@ public class MainController implements Initializable {
     
 
 >>>>>>> parent of 4e5fc5a... Revert "Revert "Merge branch 'master' of https://github.com/Nafrei/E-menu"":src/main/java/cz/pavi/ocka/el_jidelni_listek/MainController.java
+=======
+>>>>>>> fb9a2342226dfb6daa9f07345f7b90f540defc38:UAI_pub-client/src/main/java/cz/pavi/ocka/el_jidelni_listek/MainController.java
 =======
 >>>>>>> fb9a2342226dfb6daa9f07345f7b90f540defc38:UAI_pub-client/src/main/java/cz/pavi/ocka/el_jidelni_listek/MainController.java
