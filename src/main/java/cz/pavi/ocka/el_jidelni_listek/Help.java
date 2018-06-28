@@ -9,6 +9,7 @@ package cz.pavi.ocka.el_jidelni_listek;
  *
  * @author User
  */
+
 public class Help {
     
      public static String getHelp(){
