@@ -19,22 +19,22 @@ import static org.junit.Assert.*;
  * @author voldy
  */
 public class MealTest {
-    
+
     public MealTest() {
     }
-    
+
     @BeforeClass
     public static void setUpClass() {
     }
-    
+
     @AfterClass
     public static void tearDownClass() {
     }
-    
+
     @Before
     public void setUp() {
     }
-    
+
     @After
     public void tearDown() {
     }
@@ -46,7 +46,8 @@ public class MealTest {
     public void testGetName() {
         System.out.println("getName");
         Meal m = new Meal("rizek", "toto je super kureci rizek z kurete z volneho chovu", "1,3,2,4", "1", 100, 1);
-        fail("The test case is a prototype.");
+        assertEquals("rizek", m.getName());
+        fail("Test failed");
     }
 
     /**
@@ -55,12 +56,9 @@ public class MealTest {
     @Test
     public void testGetDescription() {
         System.out.println("getDescription");
-        Meal instance = null;
-        String expResult = "";
-        String result = instance.getDescription();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        Meal m = new Meal("rizek", "toto je super kureci rizek z kurete z volneho chovu", "1,3,2,4", "1", 100, 1);
+        assertEquals("toto je super kureci rizek z kurete z volneho chovu", m.getDescription());
+        fail("Test failed");
     }
 
     /**
@@ -69,12 +67,9 @@ public class MealTest {
     @Test
     public void testGetAllergens() {
         System.out.println("getAllergens");
-        Meal instance = null;
-        String expResult = "";
-        String result = instance.getAllergens();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        Meal m = new Meal("rizek", "toto je super kureci rizek z kurete z volneho chovu", "1,3,2,4", "1", 100, 1);
+        assertEquals("1,3,2,4", m.getAllergens());
+        fail("Test failed");
     }
 
     /**
@@ -83,12 +78,9 @@ public class MealTest {
     @Test
     public void testGetQuantity() {
         System.out.println("getQuantity");
-        Meal instance = null;
-        String expResult = "";
-        String result = instance.getQuantity();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        Meal m = new Meal("rizek", "toto je super kureci rizek z kurete z volneho chovu", "1,3,2,4", "1", 100, 1);
+        assertEquals("1", m.getQuantity());
+        fail("Test failed");
     }
 
     /**
@@ -97,11 +89,10 @@ public class MealTest {
     @Test
     public void testSetQuantity() {
         System.out.println("setQuantity");
-        String quantity = "";
-        Meal instance = null;
-        instance.setQuantity(quantity);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        Meal m = new Meal("rizek", "toto je super kureci rizek z kurete z volneho chovu", "1,3,2,4", "1", 100, 1);
+        m.setQuantity("5");
+        assertEquals("5", m.getQuantity());
+        fail("Test failed");
     }
 
     /**
@@ -110,26 +101,9 @@ public class MealTest {
     @Test
     public void testGetPrice() {
         System.out.println("getPrice");
-        Meal instance = null;
-        int expResult = 0;
-        int result = instance.getPrice();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of getPicture method, of class Meal.
-     */
-    @Test
-    public void testGetPicture() {
-        System.out.println("getPicture");
-        Meal instance = null;
-        Image expResult = null;
-        Image result = instance.getPicture();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        Meal m = new Meal("rizek", "toto je super kureci rizek z kurete z volneho chovu", "1,3,2,4", "1", 100, 1);
+        assertEquals(100, m.getPrice());
+        fail("Test failed");
     }
 
     /**
@@ -138,12 +112,9 @@ public class MealTest {
     @Test
     public void testGetType() {
         System.out.println("getType");
-        Meal instance = null;
-        int expResult = 0;
-        int result = instance.getType();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        Meal m = new Meal("rizek", "toto je super kureci rizek z kurete z volneho chovu", "1,3,2,4", "1", 100, 1);
+        assertEquals(1, m.getType());
+        fail("Test failed");
     }
-    
+
 }
