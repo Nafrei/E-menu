@@ -6,7 +6,9 @@
 package cz.pavi.ocka.el_jidelni_listek;
 
 import java.util.List;
-
+/*
+nekde je chyba
+*/
 /**
  *
  * @author Langi
