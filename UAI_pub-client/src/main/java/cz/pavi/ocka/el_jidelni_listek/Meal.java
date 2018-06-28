@@ -37,38 +37,43 @@ public class Meal {
     }
 
     /**
+     * Gets mealName atribute from Meal
      *
-     * @return
+     * @return String mealName value
      */
     public String getName() {
         return mealName;
     }
 
     /**
+     * Gets description atribute from Meal
      *
-     * @return
+     * @return String description value
      */
     public String getDescription() {
         return description;
     }
 
     /**
+     * Gets allergens atribute from Meal
      *
-     * @return
+     * @return String allergens value
      */
     public String getAllergens() {
         return allergens;
     }
 
     /**
+     * Gets quantity atribute from Meal
      *
-     * @return
+     * @return String quantity value
      */
     public String getQuantity() {
         return quantity;
     }
 
     /**
+     * Sets quantity atribute
      *
      * @param quantity
      */
@@ -77,24 +82,27 @@ public class Meal {
     }
 
     /**
+     * Gets price atribute from Meal
      *
-     * @return
+     * @return int price value
      */
     public int getPrice() {
         return price;
     }
 
     /**
+     * Gets picture atribute from Meal
      *
-     * @return
+     * @return Image picture value
      */
     public Image getPicture() {
         return picture;
     }
 
     /**
+     * Gets type atribute from Meal
      *
-     * @return
+     * @return int type value
      */
     public int getType() {
         return type;
