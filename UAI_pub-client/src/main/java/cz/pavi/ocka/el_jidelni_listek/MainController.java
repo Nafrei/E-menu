@@ -61,13 +61,13 @@ public class MainController implements Initializable {
     private Label numberOfItems;
 
     @FXML
-    private Label celkovaCena;
+    private Label totalPrice;
 
     @FXML
     private Button pay;
 
     @FXML
-    private ImageView kosik;
+    private ImageView cart;
 
     private Scene scene;
 
@@ -94,45 +94,45 @@ public class MainController implements Initializable {
         mainCourses.setGraphic(getImageFromLink("file:images/smazak1_4.png"));
         desserts.setGraphic(getImageFromLink("file:images/dezerty_zmrzlina.png"));
         drinks.setGraphic(getImageFromLink("file:images/napoj_cappuccino.png"));
-        kosik.setImage(new Image("file:images/kosik.png"));
+        cart.setImage(new Image("file:images/kosik.png"));
 
-        kosik.setOnMouseClicked((MouseEvent e) -> {
+        cart.setOnMouseClicked((MouseEvent e) -> {
             openNewWindow();
         });
 
-        kosik.setOnMouseEntered(new EventHandler() {
+        cart.setOnMouseEntered(new EventHandler() {
             @Override
             public void handle(Event event) {
                 scene.setCursor(Cursor.HAND); //Change cursor to hand
-                kosik.setFitWidth(44);
-                kosik.setFitHeight(42);
+                cart.setFitWidth(44);
+                cart.setFitHeight(42);
             }
         });
 
-        kosik.setOnMouseExited(new EventHandler() {
+        cart.setOnMouseExited(new EventHandler() {
             @Override
             public void handle(Event event) {
                 scene.setCursor(Cursor.DEFAULT); //Change cursor to hand
-                kosik.setFitWidth(41);
-                kosik.setFitHeight(39);
+                cart.setFitWidth(41);
+                cart.setFitHeight(39);
             }
         });
 
         sideDishesBox.setVisible(false);
 
         for (int i = 1; i < 5; i++) {
-            Label alergenyText = (Label) panel.lookup("#alergenyText" + i);
-            alergenyText.setVisible(false);
-            Button pridat = (Button) panel.lookup("#pridat" + i);
-            pridat.setVisible(false);
+            Label allergensText = (Label) panel.lookup("#allergensText" + i);
+            allergensText.setVisible(false);
+            Button added = (Button) panel.lookup("#added" + i);
+            added.setVisible(false);
         }
 
-        kontrolujZmenuTabu();
+        checkChangedTab();
     }
 
     void setEventHandlerOnAddOrderButtons() {
         for (int i = 1; i < 5; i++) {
-            Button buttonAdd = (Button) panel.lookup("#pridat" + i);
+            Button buttonAdd = (Button) panel.lookup("#added" + i);
 
             buttonAdd.setOnAction(new EventHandler<ActionEvent>() {
                 @Override
@@ -157,7 +157,7 @@ public class MainController implements Initializable {
                     service.addToOrder(selectedMeal, selectedSideDishes);
 
                     numberOfItems.setText(String.valueOf(service.getNumberOfOrderedMeals()));
-                    celkovaCena.setText(String.valueOf(service.getPriceOfChosenMeals() + " CZK"));
+                    totalPrice.setText(String.valueOf(service.getPriceOfChosenMeals() + " CZK"));
                 }
 
             });
@@ -168,7 +168,7 @@ public class MainController implements Initializable {
      * Checks if a new tab has been clicked on. According to that asks for
      * filling the tab with appropriate values.
      */
-    private void kontrolujZmenuTabu() {
+    private void checkChangedTab() {
         panel.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Tab>() {
 
             @Override
@@ -217,13 +217,13 @@ public class MainController implements Initializable {
         list.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Meal>() {
             @Override
             public void changed(ObservableValue<? extends Meal> observable, Meal oldValue, Meal newValue) {
-                ImageView obrazek = (ImageView) panel.lookup("#obrazek" + typ);
-                Text nazev = (Text) panel.lookup("#nazev" + typ);
-                Text gramy = (Text) panel.lookup("#gramy" + typ);
-                Label alergeny = (Label) panel.lookup("#alergeny" + typ);
-                Label popis = (Label) panel.lookup("#popis" + typ);
-                Label alergenyText = (Label) panel.lookup("#alergenyText" + typ);
-                Button pridat = (Button) panel.lookup("#pridat" + typ);
+                ImageView picture = (ImageView) panel.lookup("#picture" + typ);
+                Text named = (Text) panel.lookup("#name" + typ);
+                Text quantity = (Text) panel.lookup("#quantity" + typ);
+                Label allergens = (Label) panel.lookup("#allergens" + typ);
+                Label description = (Label) panel.lookup("#description" + typ);
+                Label allergensText = (Label) panel.lookup("#allergensText" + typ);
+                Button added = (Button) panel.lookup("#added" + typ);
 
                 if (newValue != null) {
                     System.out.println(list.getSelectionModel().getSelectedIndex());
@@ -231,29 +231,29 @@ public class MainController implements Initializable {
 
                     sideDishesBox.setVisible(false);
 
-                    obrazek.setImage(newValue.getPicture());
+                    picture.setImage(newValue.getPicture());
 
-                    nazev.setText(newValue.getName());
+                    named.setText(newValue.getName());
 
-                    gramy.setText(newValue.getQuantity());
+                    description.setText(newValue.getQuantity());
 
-                    alergeny.setText(newValue.getAllergens());
+                    allergens.setText(newValue.getAllergens());
 
-                    popis.setText(newValue.getDescription());
+                    description.setText(newValue.getDescription());
 
-                    alergenyText.setVisible(true);
+                    allergensText.setVisible(true);
                     if (service.getChosenTable() == 0) {
-                        pridat.setDisable(true);
+                        added.setDisable(true);
                     }
 
-                    pridat.setVisible(true);
+                    added.setVisible(true);
 
                     if (sideDishesBox != null && typ == 2) {
                         ArrayList<String> infoSideDishes = new ArrayList<>();
                         for (Meal j : service.getSideDishes()) {
                             String name = j.getName();
                             String price = String.valueOf(j.getPrice());
-                            infoSideDishes.add(name + " (" + price + " Kc)");
+                            infoSideDishes.add(name + " (" + price + " CZK)");
                         }
 
                         ObservableList<String> info = FXCollections.observableArrayList(infoSideDishes);
@@ -262,13 +262,13 @@ public class MainController implements Initializable {
                         sideDishesBox.getSelectionModel().selectFirst();
                     }
                 } else {
-                    obrazek.setImage(null);
-                    nazev.setText("");
-                    gramy.setText("");
-                    popis.setText("");
-                    alergeny.setText("");
-                    alergenyText.setVisible(false);
-                    pridat.setVisible(false);
+                    picture.setImage(null);
+                    named.setText("");
+                    description.setText("");
+                    description.setText("");
+                    allergens.setText("");
+                    allergensText.setVisible(false);
+                    added.setVisible(false);
                     sideDishesBox.setVisible(false);
                 }
             }
@@ -287,11 +287,11 @@ public class MainController implements Initializable {
                     setGraphic(null);
                 } else {
                     setText(meal.getName() + "\n" + meal.getPrice() + " Kc");
-                    ImageView obrazek = new ImageView();
-                    obrazek.setFitHeight(80);
-                    obrazek.setFitWidth(80);
-                    obrazek.setImage(meal.getPicture());
-                    setGraphic(obrazek);
+                    ImageView picture = new ImageView();
+                    picture.setFitHeight(80);
+                    picture.setFitWidth(80);
+                    picture.setImage(meal.getPicture());
+                    setGraphic(picture);
                 }
             }
         });
@@ -313,7 +313,7 @@ public class MainController implements Initializable {
     }
 
     @FXML
-    public void onMysPrycStul(MouseEvent mouseEvent) {
+    public void onMouseExitTableChooser(MouseEvent mouseEvent) {
         String[] stoly = {"1", "2", "3", "4", "5"};
         for (int i = 0; i < stoly.length; i++) {
             if (table.getText().equals(stoly[i])) {
