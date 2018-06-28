@@ -26,12 +26,13 @@ public class MealServiceMock implements MealService {
     @Override
     public void addToOrder(Meal meal, Meal sideDishes) {
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-        /*  
+         
         ArrayList<Meal> databaseList = new ArrayList<>();
         databaseList.add(new Meal("Rajcatova polevka", "Aaaa", "1,2", "100ml", 0, 0, null));
         MealServiceImpl msi = new MealServiceImpl();
         msi.addToOrder(meal, sideDishes);
-         */
+        //System.out.println("Add to order " + msi);
+        
     }
 
     @Override
@@ -39,7 +40,7 @@ public class MealServiceMock implements MealService {
         tableId = 1;
         MealServiceImpl msi = new MealServiceImpl();
         msi.deleteOrders(tableId);
-       
+        System.out.println("Delete orders " + msi);
     }
 
     @Override
@@ -48,6 +49,7 @@ public class MealServiceMock implements MealService {
         orderedMeals = new ArrayList<>();
         orderedMeals.add(new Meal("Dzus", 35));
         orderedMeals.add(new Meal("Dort", 60));
+        //System.out.println("Make order " + orderedMeals);
         
     }
 
