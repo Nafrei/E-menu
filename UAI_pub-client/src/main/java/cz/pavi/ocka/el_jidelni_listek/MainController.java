@@ -73,7 +73,7 @@ public class MainController implements Initializable {
 
     private MealService service;
 
-    private int vybranyTyp = 1;
+    private int chosenType = 1;
 
     private final int SOUPS = 1;
     private final int MAIN_COURSES = 2;
@@ -140,7 +140,7 @@ public class MainController implements Initializable {
 
                     Meal selectedSideDishes = null;
 
-                    if (vybranyTyp == 2) {
+                    if (chosenType == 2) {
                         String selected = sideDishesBox.getSelectionModel().getSelectedItem().toString();
                         String name = selected.substring(0, selected.indexOf(" "));
                         if (!name.equals("Zadne")) {
@@ -152,7 +152,7 @@ public class MainController implements Initializable {
 
                         }
                     }
-                    ListView list = (ListView) panel.lookup("#list" + vybranyTyp);
+                    ListView list = (ListView) panel.lookup("#list" + chosenType);
                     Meal selectedMeal = (Meal) list.getSelectionModel().getSelectedItem();
                     service.addToOrder(selectedMeal, selectedSideDishes);
 
@@ -227,7 +227,7 @@ public class MainController implements Initializable {
 
                 if (newValue != null) {
                     System.out.println(list.getSelectionModel().getSelectedIndex());
-                    vybranyTyp = newValue.getType();
+                    chosenType = newValue.getType();
 
                     sideDishesBox.setVisible(false);
 
