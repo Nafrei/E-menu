@@ -3,23 +3,15 @@ package cz.pavi.ocka.el_jidelni_listek;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import javafx.collections.ObservableList;
 
 public class MealServiceMock implements MealService {
 
-    @Override
+    
     public List<Meal> getSideDishes() {
-        ArrayList<Meal> databaseList = new ArrayList<>();
+        List<Meal> databaseList = new ArrayList<>();
         databaseList.add(new Meal("Bramborák", 35));
-        MealServiceImplementation msi = new MealServiceImplementation();
-        msi.getSideDishes();
-
-        /*  {{"Bramboráky", "35"},{"Hranolky", "30"}};
-        MealServiceImplementation msi = new MealServiceImplementation();
-        String[] result = msi.getSideDishes();
-        assertEquals(ObservableList(new String[] {Bramboráky, "nazdar"}), result);
-         */
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       
+        return databaseList;
     }
 
     @Override
