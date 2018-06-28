@@ -1,10 +1,8 @@
 package cz.pavi.ocka.el_jidelni_listek;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 
 public class MealServiceImpl implements MealService {
 

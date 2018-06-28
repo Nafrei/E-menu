@@ -26,7 +26,7 @@ public class DatabaseHelper {
     public DatabaseHelper() {
 
         try {
-            String driver = "com.mysql.jdbc.Driver"; //Saves driveer to a String variable.
+            String driver = "com.mysql.jdbc.Driver"; //Saves driver to a String variable.
             String url = "jdbc:mysql://sql7.freemysqlhosting.net:3306/sql7244887?"; //Saves database url to a String variable.
             Class.forName(driver);
             conn = (Connection) DriverManager.getConnection(url, "sql7244887", "HYudjNBdUy"); //Saves connection to the database to Connection type variable.
