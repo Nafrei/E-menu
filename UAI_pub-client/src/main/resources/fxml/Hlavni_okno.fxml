@@ -16,7 +16,7 @@
    <children>
       <TabPane fx:id="panel" layoutY="61.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="359.0" prefWidth="649.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
         <tabs>
-          <Tab fx:id="soups" text="Polévky">
+          <Tab fx:id="soups" text="Polevky">
             <content>
               <AnchorPane fx:id="panelType" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="333.0" prefWidth="649.0">
                      <children>
@@ -34,7 +34,7 @@
                                     <Font name="System Bold" size="12.0" />
                                  </font>
                               </Label>
-                              <Button fx:id="added1" layoutX="291.0" layoutY="262.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="121.0" text="Přidat k objednávce" />
+                              <Button fx:id="added1" layoutX="291.0" layoutY="262.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="121.0" text="Pridat k objednavce" />
                               <Label fx:id="description1" layoutX="260.0" layoutY="17.0" prefHeight="159.0" prefWidth="175.0" wrapText="true" />
                               <Label fx:id="allergens1" layoutX="95.0" layoutY="273.0" prefHeight="17.0" prefWidth="137.0" />
                            </children>
@@ -44,7 +44,7 @@
                   </AnchorPane>
             </content>
           </Tab>
-          <Tab fx:id="mainCourses" text="Hlavní jídla">
+          <Tab fx:id="mainCourses" text="Hlavni jidla">
             <content>
               <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="333.0" prefWidth="649.0">
                      <children>
@@ -100,7 +100,7 @@
                      </children></AnchorPane>
               </content>
             </Tab>
-            <Tab fx:id="drinks" text="Nápoje">
+            <Tab fx:id="drinks" text="Napoje">
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="330.0" prefWidth="638.0">
                      <children>

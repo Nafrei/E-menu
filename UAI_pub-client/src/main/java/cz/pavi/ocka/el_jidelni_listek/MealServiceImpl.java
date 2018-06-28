@@ -1,12 +1,10 @@
 package cz.pavi.ocka.el_jidelni_listek;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 
-public class MealServiceImplementation implements MealService {
+public class MealServiceImpl implements MealService {
 
     DatabaseHelper dt;
 
@@ -23,7 +21,7 @@ public class MealServiceImplementation implements MealService {
     /**
      * Constructor. Creates a new instance of Databazovnik.
      */
-    public MealServiceImplementation() {
+    public MealServiceImpl() {
         dt = new DatabaseHelper();
         chosenMeals = new HashMap<Meal, Meal>();
     }
