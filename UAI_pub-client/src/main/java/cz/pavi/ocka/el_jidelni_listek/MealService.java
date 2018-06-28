@@ -5,25 +5,33 @@
  */
 package cz.pavi.ocka.el_jidelni_listek;
 
-import java.util.List;
-/*
-nekde je chyba
-*/
+import java.util.ArrayList;
+import java.util.HashMap;
+import javafx.collections.ObservableList;
+
 /**
  *
  * @author Langi
  */
 public interface MealService 
 {
-        
-    List<Meal> getMeals();
+    ObservableList<Meal> getSideDishes();
     
-    Meal getMealById(int mealId);
+    ObservableList<Meal> getCurrentMeal(int type);
     
-    List<Order> getOrdersByTableId(int tableId);
+    HashMap<Meal, Meal> getChosenMeals();
     
-    void makeOrder(int tableId, int mealId);
+    void addToOrder(Meal meal, Meal sideDishes);
     
-    void deleteOrders(int tableId);
+    void deleteFromOrder(Meal meal);
     
+    void order();
+    
+    void setChosenTable(int number); 
+    
+    int getChosenTable();
+
+    int getNumberOfOrderedMeals();
+    
+    int getPriceOfChosenMeals();
 }

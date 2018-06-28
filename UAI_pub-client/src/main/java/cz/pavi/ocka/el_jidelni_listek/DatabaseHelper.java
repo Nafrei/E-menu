@@ -1,8 +1,10 @@
-
-package cz.pavi.ocka.el_jidelni_listek;
 /*
-pokus
-*/
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package cz.pavi.ocka.el_jidelni_listek;
+
 import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.PreparedStatement;
 import java.io.InputStream;
@@ -14,6 +16,10 @@ import javafx.embed.swing.SwingFXUtils;
 import javafx.scene.image.Image;
 import javax.imageio.ImageIO;
 
+/**
+ *
+ * @author Langi
+ */
 public class DatabaseHelper {
     
     /* Definování proměnné třídy Connection */

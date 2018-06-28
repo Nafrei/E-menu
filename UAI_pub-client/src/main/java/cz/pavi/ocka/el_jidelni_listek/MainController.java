@@ -5,17 +5,25 @@
  */
 package cz.pavi.ocka.el_jidelni_listek;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Cursor;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
@@ -28,15 +36,16 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
-
-/*pokus*/
-
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 
 /**
  *
  * @author Langi
  */
 public class MainController implements Initializable {
+    
+    
     
     @FXML
     private Tab soups;
@@ -49,6 +58,8 @@ public class MainController implements Initializable {
     
     @FXML
     private ChoiceBox sideDishesBox;
+    
+    
     
     @FXML
     private TabPane panel;
@@ -69,10 +80,9 @@ public class MainController implements Initializable {
     private Button pay;
     
     @FXML
-    private ListView dessertsList;
-    
-    @FXML
     private ImageView kosik;
+    
+    private Scene scene;
     
     private MealService service;
     
@@ -94,12 +104,33 @@ public class MainController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) 
     {
-
         soups.setGraphic(getObrazekZOdkazu("file:images/polevka2_1.png"));
         mainCourses.setGraphic(getObrazekZOdkazu("file:images/smazak1_4.png"));
         desserts.setGraphic(getObrazekZOdkazu("file:images/dezerty_zmrzlina.png"));
         drinks.setGraphic(getObrazekZOdkazu("file:images/napoj_cappuccino.png"));
         kosik.setImage(new Image("file:images/kosik.png"));
+        
+        kosik.setOnMouseClicked((MouseEvent e) -> {
+            openNewWindow();
+        });
+        
+        kosik.setOnMouseEntered(new EventHandler() {
+            @Override
+            public void handle(Event event) {
+                scene.setCursor(Cursor.HAND); //Change cursor to hand
+                kosik.setFitWidth(44);
+                kosik.setFitHeight(42);
+            }
+        });
+        
+        kosik.setOnMouseExited(new EventHandler() {
+            @Override
+            public void handle(Event event) {
+                scene.setCursor(Cursor.DEFAULT); //Change cursor to hand
+                kosik.setFitWidth(41);
+                kosik.setFitHeight(39);
+            }
+        });
         
         sideDishesBox.setVisible(false);
 
@@ -115,6 +146,8 @@ public class MainController implements Initializable {
         kontrolujZmenuTabu(); 
     }
     
+    
+    
     void setEventHandlerOnAddOrderButtons()
     {
         for(int i=1; i < 5 ; i++)
@@ -123,10 +156,29 @@ public class MainController implements Initializable {
         
             buttonAdd.setOnAction(new EventHandler<ActionEvent>() {
                 @Override public void handle(ActionEvent e) {
-                    //service.setNumberOfOrderedMeals(service.getNumberOfOrderedMeals() + 1);
+                    
+                    Meal selectedSideDishes = null;
+                    
+                    if(vybranyTyp == 2)
+                    {
+                        String selected = sideDishesBox.getSelectionModel().getSelectedItem().toString();
+                        String name = selected.substring(0, selected.indexOf(" ")); 
+                        if(!name.equals("Zadne"))
+                        {
+                            for(Meal m: service.getSideDishes())
+                            {
+                                if(m.getName().equals(name))
+                                {
+                                    selectedSideDishes = m;
+                                }
+                            }
+                            
+                        }
+                    }
                     ListView list = (ListView)panel.lookup("#list"+vybranyTyp);
                     Meal selectedMeal = (Meal)list.getSelectionModel().getSelectedItem();
-                    service.addToOrder(selectedMeal);
+                    service.addToOrder(selectedMeal, selectedSideDishes);
+                    
                     numberOfItems.setText(String.valueOf(service.getNumberOfOrderedMeals()));
                     celkovaCena.setText(String.valueOf(service.getPriceOfChosenMeals() + " Kč"));
                 }
@@ -174,15 +226,15 @@ public class MainController implements Initializable {
      * Nastaví MealServiceImplementation a požádá o naplnění prvního tabu
      * @param model MealServiceImplementation
      */
-    public void setModel(MealService service)
+    public void setModel(MealService service, Scene scene)
     {
         this.service = service;
 
         nastavList(SOUPS, (ListView)panel.lookup("#list1"));
 
-
         setEventHandlerOnAddOrderButtons();
-
+        
+        this.scene = scene;
     }
         
     /**
@@ -238,8 +290,17 @@ public class MainController implements Initializable {
                 
                 if(sideDishesBox != null && typ == 2)
                 {
+                    ArrayList<String> infoSideDishes = new ArrayList<>();
+                    for(Meal j: service.getSideDishes())
+                    {
+                        String name = j.getName();
+                        String price = String.valueOf(j.getPrice());
+                        infoSideDishes.add(name + " (" + price + " Kč)");
+                    }
+                    
+                    ObservableList<String> info = FXCollections.observableArrayList(infoSideDishes);
                     sideDishesBox.setVisible(true);
-                    sideDishesBox.setItems(FXCollections.observableList(service.getSideDishes()));
+                    sideDishesBox.setItems(info);
                     sideDishesBox.getSelectionModel().selectFirst();
                 }
             }
@@ -257,8 +318,7 @@ public class MainController implements Initializable {
         }
         });
 
-        list.setItems(FXCollections.observableList(service.getCurrentMeals(typ)));
-        
+        list.setItems(service.getCurrentMeal(typ));
         
         list.setCellFactory(param -> new ListCell<Meal>() {
             
@@ -315,6 +375,28 @@ public class MainController implements Initializable {
                     pridat.setDisable(false);
                 }
             }
+        }
+    }
+    
+    private void openNewWindow()
+    {
+        
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/OrderedMeals.fxml"));
+            Parent root = (Parent) fxmlLoader.load();
+            OrderedMealsController controller = fxmlLoader.getController();
+            controller.setService(service);
+        
+            Stage stage = new Stage();
+            stage.initModality(Modality.APPLICATION_MODAL);
+            
+            stage.setTitle("Ordered Meals");
+            stage.setScene(new Scene(root));  
+            stage.showAndWait();
+            
+        
+        } catch (IOException ex) {
+            Logger.getLogger(MainController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     

@@ -6,9 +6,7 @@
 package cz.pavi.ocka.el_jidelni_listek;
 
 import javafx.scene.image.Image;
-/*
-pokus
-*/
+
 /**
  *
  * @author Langi
