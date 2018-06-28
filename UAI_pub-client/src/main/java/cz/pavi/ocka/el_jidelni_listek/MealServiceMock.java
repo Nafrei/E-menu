@@ -10,7 +10,6 @@ public class MealServiceMock implements MealService {
     public List<Meal> getSideDishes() {
         List<Meal> databaseList = new ArrayList<>();
         databaseList.add(new Meal("Bramborák", 35));
-       
         return databaseList;
     }
 
