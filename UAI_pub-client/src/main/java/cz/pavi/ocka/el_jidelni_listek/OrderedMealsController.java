@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package cz.pavi.ocka.el_jidelni_listek;
 
 import java.net.URL;
@@ -19,50 +14,43 @@ import javafx.scene.image.ImageView;
 /**
  * FXML Controller class
  *
- * @author Langi
+ *
  */
 public class OrderedMealsController implements Initializable {
-    
-    
+
     @FXML
     ListView listOfOrderedMeals;
-    
+
     private MealService service;
-    
+
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        
-        
-    }    
-    
-    public void setService(MealService service)
-    {
+
+    }
+
+    public void setService(MealService service) {
         this.service = service;
         loadList();
     }
-    
-    private void loadList()
-    {
+
+    private void loadList() {
         ArrayList<Meal> orderedMeals = new ArrayList<>(service.getChosenMeals().keySet());
         ObservableList<Meal> observableOrderedMeals = FXCollections.observableArrayList(orderedMeals);
         listOfOrderedMeals.setItems(observableOrderedMeals);
-        
+
         listOfOrderedMeals.setCellFactory(param -> new ListCell<Meal>() {
-            
+
             @Override
             public void updateItem(Meal jidlo, boolean empty) {
                 super.updateItem(jidlo, empty);
-                if (empty) 
-                {
+                if (empty) {
                     setText(null);
                     setGraphic(null);
-                } 
-                else 
-                {
-                    setText(jidlo.getName() + "\n" + jidlo.getPrice() + " Kƒç");
+                } else {
+                    setText(jidlo.getName() + "\n" + jidlo.getPrice() + " Kƒ?");
                     ImageView obrazek = new ImageView();
                     obrazek.setFitHeight(80);
                     obrazek.setFitWidth(80);
@@ -72,5 +60,5 @@ public class OrderedMealsController implements Initializable {
             }
         });
     }
-    
+
 }
