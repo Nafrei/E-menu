@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> fb9a2342226dfb6daa9f07345f7b90f540defc38
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
     The main parent project definition for the entire application (server and client). This defines the modules that
@@ -37,9 +32,7 @@
     <module>UAI_pub-client</module>
     <module>UAI_pub-server</module>
   </modules>
-<<<<<<< HEAD
 </project>
-=======
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
@@ -159,11 +152,10 @@
     </build>
 
 </project>
->>>>>>> parent of 4e5fc5a... Revert "Revert "Merge branch 'master' of https://github.com/Nafrei/E-menu""
-=======
+
+
 </project>
->>>>>>> fb9a2342226dfb6daa9f07345f7b90f540defc38
-=======
+
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
     The main parent project definition for the entire application (server and client). This defines the modules that
@@ -198,5 +190,4 @@
     <module>UAI_pub-client</module>
     <module>UAI_pub-server</module>
   </modules>
-</project>
->>>>>>> fb9a2342226dfb6daa9f07345f7b90f540defc38
+
