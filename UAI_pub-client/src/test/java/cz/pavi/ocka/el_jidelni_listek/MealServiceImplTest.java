@@ -5,8 +5,6 @@
  */
 package cz.pavi.ocka.el_jidelni_listek;
 
-import cz.pavi.ocka.el_jidelni_listek.MealServiceImpl;
-import java.util.List;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -39,6 +37,9 @@ public class MealServiceImplTest {
      */
     @Test
     public void testAddToOrder() {
+        MealServiceImpl service = new MealServiceImpl();
+        service.addToOrder(new Meal("Rizek", 20), new Meal("Hranolky", 10));
+        assertEquals(1, service.getNumberOfOrderedMeals());
     }
 
     /**
@@ -76,10 +77,7 @@ public class MealServiceImplTest {
      */
     @Test
     public void testGetChosenMeals() {
-        MealServiceImpl service = new MealServiceImpl();
-        service.addToOrder(new Meal("Kurizek", 20), new Meal("brambor", 10));
-        service.addToOrder(new Meal("Kurizek", 20), new Meal("brambor", 10));
-        assertEquals(2, service.getNumberOfOrderedMeals());
+        
     }
 
     /**
@@ -87,6 +85,10 @@ public class MealServiceImplTest {
      */
     @Test
     public void testGetNumberOfOrderedMeals() {
+        MealServiceImpl service = new MealServiceImpl();
+        service.addToOrder(new Meal("Kurizek", 20), new Meal("brambor", 10));
+        service.addToOrder(new Meal("Kurizek", 20), new Meal("brambor", 10));
+        assertEquals(service.getNumberOfOrderedMeals(), 2);
     }
 
     /**
