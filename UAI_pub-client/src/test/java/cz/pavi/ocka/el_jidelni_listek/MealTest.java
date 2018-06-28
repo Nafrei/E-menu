@@ -47,7 +47,6 @@ public class MealTest {
         System.out.println("getName");
         Meal m = new Meal("rizek", "toto je super kureci rizek z kurete z volneho chovu", "1,3,2,4", "1", 100, 1);
         assertEquals("rizek", m.getName());
-        fail("Test failed");
     }
 
     /**
@@ -58,7 +57,6 @@ public class MealTest {
         System.out.println("getDescription");
         Meal m = new Meal("rizek", "toto je super kureci rizek z kurete z volneho chovu", "1,3,2,4", "1", 100, 1);
         assertEquals("toto je super kureci rizek z kurete z volneho chovu", m.getDescription());
-        fail("Test failed");
     }
 
     /**
@@ -69,7 +67,6 @@ public class MealTest {
         System.out.println("getAllergens");
         Meal m = new Meal("rizek", "toto je super kureci rizek z kurete z volneho chovu", "1,3,2,4", "1", 100, 1);
         assertEquals("1,3,2,4", m.getAllergens());
-        fail("Test failed");
     }
 
     /**
@@ -80,7 +77,6 @@ public class MealTest {
         System.out.println("getQuantity");
         Meal m = new Meal("rizek", "toto je super kureci rizek z kurete z volneho chovu", "1,3,2,4", "1", 100, 1);
         assertEquals("1", m.getQuantity());
-        fail("Test failed");
     }
 
     /**
@@ -92,7 +88,6 @@ public class MealTest {
         Meal m = new Meal("rizek", "toto je super kureci rizek z kurete z volneho chovu", "1,3,2,4", "1", 100, 1);
         m.setQuantity("5");
         assertEquals("5", m.getQuantity());
-        fail("Test failed");
     }
 
     /**
@@ -103,7 +98,6 @@ public class MealTest {
         System.out.println("getPrice");
         Meal m = new Meal("rizek", "toto je super kureci rizek z kurete z volneho chovu", "1,3,2,4", "1", 100, 1);
         assertEquals(100, m.getPrice());
-        fail("Test failed");
     }
 
     /**
@@ -114,7 +108,6 @@ public class MealTest {
         System.out.println("getType");
         Meal m = new Meal("rizek", "toto je super kureci rizek z kurete z volneho chovu", "1,3,2,4", "1", 100, 1);
         assertEquals(1, m.getType());
-        fail("Test failed");
     }
 
 }
