@@ -10,6 +10,8 @@ import java.util.ArrayList;
 import java.util.ResourceBundle;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -234,7 +236,7 @@ public class MainController implements Initializable {
                 if(sideDishesBox != null && typ == 2)
                 {
                     sideDishesBox.setVisible(true);
-                    sideDishesBox.setItems(service.getSideDishes());
+                    sideDishesBox.setItems(FXCollections.observableList(service.getSideDishes()));
                     sideDishesBox.getSelectionModel().selectFirst();
                 }
             }
@@ -252,7 +254,8 @@ public class MainController implements Initializable {
         }
         });
 
-        list.setItems(service.getCurrentMeal(typ));
+        list.setItems(FXCollections.observableList(service.getCurrentMeals(typ)));
+        
         
         list.setCellFactory(param -> new ListCell<Meal>() {
             

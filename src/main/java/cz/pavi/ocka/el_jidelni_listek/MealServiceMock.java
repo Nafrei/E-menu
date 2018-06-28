@@ -6,8 +6,7 @@
 package cz.pavi.ocka.el_jidelni_listek;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import javafx.collections.ObservableList;
+import java.util.List;
 
 /**
  *
@@ -16,10 +15,10 @@ import javafx.collections.ObservableList;
 public class MealServiceMock implements MealService {
 
     @Override
-    public ObservableList<String> getSideDishes() {    
+    public List<String> getSideDishes() {    
        ArrayList<Meal> databaseList = new ArrayList<>();
         databaseList.add(new Meal("Bramborák", 35));
-        MealServiceImplementation msi = new MealServiceImplementation();
+        MealServiceImpl msi = new MealServiceImpl();
         msi.getSideDishes();
 	 
       /*  {{"Bramboráky", "35"},{"Hranolky", "30"}};
@@ -31,12 +30,12 @@ public class MealServiceMock implements MealService {
     }
 
     @Override
-    public ObservableList<Meal> getCurrentMeal(int type) {
+    public List<Meal> getCurrentMeals(int type) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public ArrayList<Meal> getChosenMeals() {
+    public List<Meal> getChosenMeals() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
