@@ -21,7 +21,11 @@
     <artifactId>UAI_pub-client</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
-
+     
+<properties>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+</properties>
     <build>
 
         <finalName>UAI_pub-client</finalName>
@@ -53,16 +57,7 @@
 
                 </configuration>
             </plugin>
-            <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-compiler-plugin</artifactId>
-            <version>(whatever version is current)</version>
-            <configuration>
-              <!-- or whatever version you use -->
-              <source>1.8</source>
-              <target>1.8</target>
-            </configuration>
-          </plugin>
+           
         </plugins>
     </build>
 
@@ -77,6 +72,11 @@
         </dependency-->
 
         <!-- Spring and supporting toolkits -->
+         <dependency>
+    <groupId>mysql</groupId>
+    <artifactId>mysql-connector-java</artifactId>
+    <version>5.1.44</version>
+    </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
