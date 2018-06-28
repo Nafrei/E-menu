@@ -14,23 +14,58 @@ import javafx.collections.ObservableList;
  */
 public interface MealService 
 {
-    ObservableList<String> getSideDishes();
-    
+   /**
+     * Požádá DatabaseHelper o hodnoty z databáze k danému typu jídla a vrátí je jako ObservableList
+     * @param type Typ jídla
+     */
     ObservableList<Meal> getCurrentMeal(int type);
     
+    /**
+     * Vrací vybraná jídla.
+     * @return Vybraná jídla
+     */
     ArrayList<Meal> getChosenMeals();
     
+    /**
+     * Metoda, která se stará o přidání jídla do objednávky.
+     * @param meal Jídlo, které se přidá do objednávky.
+     */
     void addToOrder(Meal meal);
     
+    /**
+     * Vezme vybrané jídlo/nápoj a smaže jej z objednávky. 
+     * @param meal Jídlo, které chce uživatel smazat z objednávky.
+     */
     void deleteFromOrder(Meal meal);
     
+    /**
+     * 
+     */
     void order();
     
+    
+    /**
+     * Pomocí vstupu se uloží k vybranému stolu číslo stolu.
+     * @param number Číslo stolu
+     */
     void setChosenTable(int number); 
     
+    /**
+     * Metoda, která vrací číslo vybraného stolu.
+     * @return 
+     */
     int getChosenTable();
 
+    /**
+     * Metoda, která vrací počet objednaných jídel.
+     * @return 
+     */
     int getNumberOfOrderedMeals();
     
+    /**
+     * Metoda, která vrací cenu za objednané jídla.
+     * @return 
+     */
     int getPriceOfChosenMeals();
+    
 }
