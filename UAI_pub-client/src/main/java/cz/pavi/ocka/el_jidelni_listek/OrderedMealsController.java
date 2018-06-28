@@ -50,7 +50,7 @@ public class OrderedMealsController implements Initializable {
                     setText(null);
                     setGraphic(null);
                 } else {
-                    setText(jidlo.getName() + "\n" + jidlo.getPrice() + " KÄ?");
+                    setText(jidlo.getName() + "\n" + jidlo.getPrice() + " CZK");
                     ImageView obrazek = new ImageView();
                     obrazek.setFitHeight(80);
                     obrazek.setFitWidth(80);

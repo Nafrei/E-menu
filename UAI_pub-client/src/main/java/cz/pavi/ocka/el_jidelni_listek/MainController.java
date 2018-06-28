@@ -286,7 +286,7 @@ public class MainController implements Initializable {
                     setText(null);
                     setGraphic(null);
                 } else {
-                    setText(meal.getName() + "\n" + meal.getPrice() + " Kc");
+                    setText(meal.getName() + "\n" + meal.getPrice() + " CZK");
                     ImageView picture = new ImageView();
                     picture.setFitHeight(80);
                     picture.setFitWidth(80);
@@ -321,8 +321,8 @@ public class MainController implements Initializable {
                 table.setDisable(true);
                 warning.setVisible(false);
                 for (int j = 1; j < 5; j++) {
-                    Button pridat = (Button) panel.lookup("#pridat" + i);
-                    pridat.setDisable(false);
+                    Button added = (Button) panel.lookup("#added" + i);
+                    added.setDisable(false);
                 }
             }
         }
