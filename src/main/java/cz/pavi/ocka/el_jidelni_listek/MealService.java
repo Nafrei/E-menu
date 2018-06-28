@@ -6,7 +6,6 @@
 package cz.pavi.ocka.el_jidelni_listek;
 
 import java.util.List;
-import javafx.collections.ObservableList;
 
 /**
  *
@@ -14,60 +13,15 @@ import javafx.collections.ObservableList;
  */
 public interface MealService 
 {
-    List<String> getSideDishes();
+        
+    List<Meal> getMeals();
     
-    /**
-     * Požádá DatabaseHelper o hodnoty z databáze k danému typu jídla a vrátí je jako List.
-     * @param type Typ jídla
-     * @return Vrací list 
-     */
-    List<Meal> getCurrentMeals(int type);
+    Meal getMealById(int mealId);
     
-    /**
-     * Vrací vybraná jídla.
-     * @return Vybraná jídla
-     */
-    List<Meal> getChosenMeals();
+    List<Order> getOrdersByTableId(int tableId);
     
-    /**
-     * Metoda, která se stará o přidání jídla do objednávky.
-     * @param meal Jídlo, které se přidá do objednávky.
-     */
-    void addToOrder(Meal meal);
+    void makeOrder(int tableId, int mealId);
     
-    /**
-     * Vezme vybrané jídlo a smaže je z objednávky. 
-     * @param meal Jídlo, které chce uživatel smazat z objednávky.
-     */
-    void deleteFromOrder(Meal meal);
+    void deleteOrders(int tableId);
     
-    /**
-     * 
-     */
-    void order();
-    
-    
-    /**
-     * Pomocí vstupu se uloží k vybranému stolu číslo stolu.
-     * @param number Číslo stolu
-     */
-    void setChosenTable(int number); 
-    
-    /**
-     * Metoda, která vrací číslo vybraného stolu.
-     * @return 
-     */
-    int getChosenTable();
-
-    /**
-     * Metoda, která vrací počet objednaných jídel.
-     * @return 
-     */
-    int getNumberOfOrderedMeals();
-    
-    /**
-     * Metoda, která vrací cenu za objednané jídla.
-     * @return 
-     */
-    int getPriceOfChosenMeals();
 }
