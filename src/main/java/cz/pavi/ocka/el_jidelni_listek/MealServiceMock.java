@@ -17,11 +17,11 @@ public class MealServiceMock implements MealService {
 
     @Override
     public ObservableList<String> getSideDishes() {    
-      /*  ArrayList<Meal> databaseList = new ArrayList<>();
+       ArrayList<Meal> databaseList = new ArrayList<>();
         databaseList.add(new Meal("Bramborák", 35));
         MealServiceImplementation msi = new MealServiceImplementation();
         msi.getSideDishes();
-	assertEquals(databaseList, msi);   
+	 
       /*  {{"Bramboráky", "35"},{"Hranolky", "30"}};
         MealServiceImplementation msi = new MealServiceImplementation();
         String[] result = msi.getSideDishes();

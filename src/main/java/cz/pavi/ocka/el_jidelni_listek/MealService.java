@@ -19,6 +19,7 @@ public interface MealService
     /**
      * Požádá DatabaseHelper o hodnoty z databáze k danému typu jídla a vrátí je jako ObservableList
      * @param type Typ jídla
+     * @return Vrací list 
      */
     ObservableList<Meal> getCurrentMeal(int type);
     
