@@ -317,8 +317,9 @@ public class MainController implements Initializable {
             }
         }
         });
-
-        list.setItems(service.getCurrentMeal(typ));
+        
+        ObservableList currentMealsList = FXCollections.observableArrayList(service.getCurrentMeals(typ));
+        list.setItems(currentMealsList);
         
         list.setCellFactory(param -> new ListCell<Meal>() {
             
@@ -332,7 +333,7 @@ public class MainController implements Initializable {
                 } 
                 else 
                 {
-                    setText(jidlo.getName() + "\n" + jidlo.getPrice() + " Kč");
+                    setText(jidlo.getName() + "\n" + jidlo.getPrice() + " K�");
                     ImageView obrazek = new ImageView();
                     obrazek.setFitHeight(80);
                     obrazek.setFitWidth(80);
@@ -399,86 +400,7 @@ public class MainController implements Initializable {
             Logger.getLogger(MainController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
-    
-    
-    /*
-    Mám zde pro budoucí využití
-    */
-//    private class RichCarListCell extends ListCell<Jidlo> {
-//        
-//        private final GridPane gridPane = new GridPane(); 
-//        
-//        private final Label nazevJidla = new Label(); 
-//        
-//        //private final Rectangle colorRect = new Rectangle(10, 10); 
-//        //private final Label descriptionLabel = new Label(); 
-//        private final ImageView obrazek = new ImageView(); 
-//        private final AnchorPane content = new AnchorPane(); 
-//        
-//        public RichCarListCell() { 
-//            System.out.println("tady som");
-//        //carIcon.setFitWidth(75); 
-//        //carIcon.setPreserveRatio(true); 
-//        //GridPane.setConstraints(carIcon, 0, 0, 1, 3); 
-//        //GridPane.setValignment(carIcon, VPos.TOP); 
-//        // 
-//        nazevJidla.setStyle("-fx-font-weight: bold; -fx-font-size: 1.5em;"); 
-//        GridPane.setConstraints(nazevJidla, 1, 0); 
-//        // 
-////        brandLabel.setStyle("-fx-font-size: 0.9em; -fx-font-style: italic; -fx-opacity: 0.5;"); 
-////        GridPane.setConstraints(brandLabel, 2, 0); 
-////        // 
-////        brandIcon.setFitWidth(22); 
-////        brandIcon.setPreserveRatio(true); 
-////        GridPane.setConstraints(brandIcon, 3, 0); 
-////        GridPane.setValignment(brandIcon, VPos.CENTER); 
-////        // 
-////        colorRect.setStroke(Color.BLACK); 
-////        descriptionLabel.setStyle("-fx-opacity: 0.75;"); 
-////        descriptionLabel.setGraphic(colorRect); 
-////        GridPane.setConstraints(descriptionLabel, 1, 1); 
-////        GridPane.setColumnSpan(descriptionLabel, Integer.MAX_VALUE); 
-//        //         
-//        gridPane.getColumnConstraints().add(new ColumnConstraints(Region.USE_COMPUTED_SIZE, Region.USE_COMPUTED_SIZE, Region.USE_COMPUTED_SIZE, Priority.NEVER, HPos.LEFT, true)); 
-//        gridPane.getColumnConstraints().add(new ColumnConstraints(Region.USE_COMPUTED_SIZE, Region.USE_COMPUTED_SIZE, Region.USE_COMPUTED_SIZE, Priority.ALWAYS, HPos.LEFT, true)); 
-//        gridPane.getColumnConstraints().add(new ColumnConstraints(Region.USE_COMPUTED_SIZE, Region.USE_COMPUTED_SIZE, Region.USE_COMPUTED_SIZE, Priority.NEVER, HPos.LEFT, true)); 
-//        gridPane.getColumnConstraints().add(new ColumnConstraints(Region.USE_COMPUTED_SIZE, Region.USE_COMPUTED_SIZE, Region.USE_COMPUTED_SIZE, Priority.NEVER, HPos.LEFT, true)); 
-//        gridPane.getRowConstraints().add(new RowConstraints(Region.USE_COMPUTED_SIZE, Region.USE_COMPUTED_SIZE, Region.USE_COMPUTED_SIZE, Priority.NEVER, VPos.CENTER, true)); 
-//        gridPane.getRowConstraints().add(new RowConstraints(Region.USE_COMPUTED_SIZE, Region.USE_COMPUTED_SIZE, Region.USE_COMPUTED_SIZE, Priority.NEVER, VPos.CENTER, true)); 
-//        gridPane.getRowConstraints().add(new RowConstraints(Region.USE_COMPUTED_SIZE, Region.USE_COMPUTED_SIZE, Region.USE_COMPUTED_SIZE, Priority.ALWAYS, VPos.CENTER, true)); 
-//        gridPane.setHgap(6); 
-//        gridPane.setVgap(6); 
-//        gridPane.getChildren().setAll(nazevJidla); 
-//        AnchorPane.setTopAnchor(gridPane, 0d); 
-//        AnchorPane.setLeftAnchor(gridPane, 0d); 
-//        AnchorPane.setBottomAnchor(gridPane, 0d); 
-//        AnchorPane.setRightAnchor(gridPane, 0d); 
-//        content.getChildren().add(gridPane); 
-//    } 
-//        
-//        
-//        @Override 
-//        protected void updateItem(Meal item, boolean empty) { 
-//        super.updateItem(item, empty); 
-//        setGraphic(null); 
-//        setText(null); 
-//        setContentDisplay(ContentDisplay.LEFT); 
-//            
-//        if (!empty && item != null) { 
-//            nazevJidla.setText(item.vratNazev()); 
-//            
-//            //obrazek.setImage(item.vratObrazek()); 
-//            
-//            
-//            setText(null); 
-//            setGraphic(content); 
-//            setContentDisplay(ContentDisplay.GRAPHIC_ONLY); 
-//        } 
-//    } 
-      
-     
-    }            
+   }            
                 
     
     

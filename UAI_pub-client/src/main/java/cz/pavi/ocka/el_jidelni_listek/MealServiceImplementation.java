@@ -7,6 +7,7 @@ package cz.pavi.ocka.el_jidelni_listek;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
@@ -24,9 +25,9 @@ public class MealServiceImplementation implements MealService {
     
     private HashMap<Meal, Meal> chosenMeals = null;
     
-    private ObservableList<Meal> currentMeals = null;
+    private List<Meal> currentMeals = null;
     
-    private ObservableList<Meal> sideDishes = null;
+    private List<Meal> sideDishes = null;
     
     /**
      * Konstruktor. Vytvoří novou instanci Databazovniku.
@@ -39,29 +40,24 @@ public class MealServiceImplementation implements MealService {
 
 
     @Override
-    public ObservableList<Meal> getSideDishes() {
-        ArrayList<Meal> databaseList = dt.nactiDataZDatabaze(5);
+    public List<Meal> getSideDishes() 
+    {
+        List<Meal> databaseList = dt.nactiDataZDatabaze(5);
         
-        ArrayList<String> infoSideDishes = new ArrayList<>();
-        for(Meal j: databaseList)
-        {
-            String name = j.getName();
-            String price = String.valueOf(j.getPrice());
-            infoSideDishes.add(name + " (" + price + " Kč)");
-        }
-        sideDishes = FXCollections.observableArrayList (databaseList);
         
-        return sideDishes;
+        
+        return databaseList;
     }
     
     
     /**
      * Požádá DatabaseHelper o hodnoty z databáze k danému typu jídla a vrátí je jako ObservableList
      * @param type Typ jídla
+     * @return 
      */
     @Override
-    public ObservableList<Meal> getCurrentMeal(int type) {
-        ArrayList<Meal> databaseList = dt.nactiDataZDatabaze(type);
+    public List<Meal> getCurrentMeals(int type) {
+        List<Meal> databaseList = dt.nactiDataZDatabaze(type);
         currentMeals = FXCollections.observableArrayList (databaseList);
         
         return currentMeals;
@@ -73,7 +69,7 @@ public class MealServiceImplementation implements MealService {
     }
 
     @Override
-    public void order() {
+    public void makeOrder(int tableID, List<Meal> orderedMeals) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
@@ -99,8 +95,8 @@ public class MealServiceImplementation implements MealService {
     }
 
     @Override
-    public void deleteFromOrder(Meal meal) {
-        chosenMeals.remove(meal);
+    public void deleteOrders(int tableID) {
+        
     }
 
     @Override
