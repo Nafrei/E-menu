@@ -1,7 +1,7 @@
 
 package cz.pavi.ocka.el_jidelni_listek;
 
-import cz.pavi.ocka.el_jidelni_listek.MealServiceImplementation;
+import cz.pavi.ocka.el_jidelni_listek.MealServiceImpl;
 import cz.pavi.ocka.el_jidelni_listek.DatabaseHelper;
 import cz.pavi.ocka.el_jidelni_listek.MainController;
 import javafx.application.Application;
@@ -21,7 +21,7 @@ public class MainApp extends Application {
         //Scene scene = new Scene(root);
         //scene.getStylesheets().add("/jidelni_listek/HlavniOkno.css");
         
-        MealServiceImplementation service = new MealServiceImplementation();
+        MealServiceImpl service = new MealServiceImpl();
         
         DatabaseHelper dt = new DatabaseHelper();
         

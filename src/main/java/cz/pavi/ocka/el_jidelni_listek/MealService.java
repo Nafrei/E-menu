@@ -5,7 +5,7 @@
  */
 package cz.pavi.ocka.el_jidelni_listek;
 
-import java.util.ArrayList;
+import java.util.List;
 import javafx.collections.ObservableList;
 
 /**
@@ -14,20 +14,20 @@ import javafx.collections.ObservableList;
  */
 public interface MealService 
 {
-    ObservableList<String> getSideDishes();
+    List<String> getSideDishes();
     
     /**
-     * Požádá DatabaseHelper o hodnoty z databáze k danému typu jídla a vrátí je jako ObservableList
+     * Požádá DatabaseHelper o hodnoty z databáze k danému typu jídla a vrátí je jako List.
      * @param type Typ jídla
      * @return Vrací list 
      */
-    ObservableList<Meal> getCurrentMeal(int type);
+    List<Meal> getCurrentMeals(int type);
     
     /**
      * Vrací vybraná jídla.
      * @return Vybraná jídla
      */
-    ArrayList<Meal> getChosenMeals();
+    List<Meal> getChosenMeals();
     
     /**
      * Metoda, která se stará o přidání jídla do objednávky.
