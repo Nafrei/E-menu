@@ -226,7 +226,6 @@ public class MainController implements Initializable {
                 Button added = (Button) panel.lookup("#added" + typ);
 
                 if (newValue != null) {
-                    System.out.println(list.getSelectionModel().getSelectedIndex());
                     chosenType = newValue.getType();
 
                     sideDishesBox.setVisible(false);
@@ -235,7 +234,7 @@ public class MainController implements Initializable {
 
                     named.setText(newValue.getName());
 
-                    description.setText(newValue.getQuantity());
+                    quantity.setText(newValue.getQuantity());
 
                     allergens.setText(newValue.getAllergens());
 
