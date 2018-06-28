@@ -74,7 +74,7 @@ public class MealServiceImpl implements MealService {
 
     @Override
     public void deleteOrders(int tableID) {
-
+        chosenMeals.clear();
     }
 
     @Override
