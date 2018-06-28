@@ -90,10 +90,10 @@ public class MainController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        soups.setGraphic(getObrazekZOdkazu("file:images/polevka2_1.png"));
-        mainCourses.setGraphic(getObrazekZOdkazu("file:images/smazak1_4.png"));
-        desserts.setGraphic(getObrazekZOdkazu("file:images/dezerty_zmrzlina.png"));
-        drinks.setGraphic(getObrazekZOdkazu("file:images/napoj_cappuccino.png"));
+        soups.setGraphic(getImageFromLink("file:images/polevka2_1.png"));
+        mainCourses.setGraphic(getImageFromLink("file:images/smazak1_4.png"));
+        desserts.setGraphic(getImageFromLink("file:images/dezerty_zmrzlina.png"));
+        drinks.setGraphic(getImageFromLink("file:images/napoj_cappuccino.png"));
         kosik.setImage(new Image("file:images/kosik.png"));
 
         kosik.setOnMouseClicked((MouseEvent e) -> {
@@ -207,7 +207,7 @@ public class MainController implements Initializable {
     }
 
     /**
-     * Sets up values (according to their type) to ListView.
+     * Fills values (according to their type) to ListView.
      *
      * @param typ type of food
      * @param list Specific compomonent of ListView
@@ -280,17 +280,17 @@ public class MainController implements Initializable {
         list.setCellFactory(param -> new ListCell<Meal>() {
 
             @Override
-            public void updateItem(Meal jidlo, boolean empty) {
-                super.updateItem(jidlo, empty);
+            public void updateItem(Meal meal, boolean empty) {
+                super.updateItem(meal, empty);
                 if (empty) {
                     setText(null);
                     setGraphic(null);
                 } else {
-                    setText(jidlo.getName() + "\n" + jidlo.getPrice() + " Kc");
+                    setText(meal.getName() + "\n" + meal.getPrice() + " Kc");
                     ImageView obrazek = new ImageView();
                     obrazek.setFitHeight(80);
                     obrazek.setFitWidth(80);
-                    obrazek.setImage(jidlo.getPicture());
+                    obrazek.setImage(meal.getPicture());
                     setGraphic(obrazek);
                 }
             }
@@ -302,7 +302,7 @@ public class MainController implements Initializable {
      *
      * @param link link to the image
      */
-    private ImageView getObrazekZOdkazu(String link) {
+    private ImageView getImageFromLink(String link) {
         Image i = new Image(link);
         ImageView imageView = new ImageView();
         imageView.setFitHeight(35);
