@@ -5,7 +5,7 @@
  */
 package cz.pavi.ocka.el_jidelni_listek;
 
-import cz.pavi.ocka.el_jidelni_listek.MealServiceTest.MealServiceImpl;
+import cz.pavi.ocka.el_jidelni_listek.MealServiceImpl;
 import java.util.List;
 import org.junit.Test;
 import static org.junit.Assert.*;
