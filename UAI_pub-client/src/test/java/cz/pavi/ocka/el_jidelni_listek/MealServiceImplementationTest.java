@@ -45,7 +45,7 @@ public class MealServiceImplementationTest {
      */
     @Test
     public void testMakeOrder() {
-         MealServiceImplementation service = new MealServiceImplementation();
+         MealServiceImpl service = new MealServiceImpl();
          try {
             service.makeOrder(1, null);
                          assertTrue(true);
@@ -75,7 +75,7 @@ public class MealServiceImplementationTest {
      */
     @Test
     public void testGetChosenMeals() {
-        MealServiceImplementation service = new MealServiceImplementation();
+        MealServiceImpl service = new MealServiceImpl();
         service.addToOrder(new Meal("Kuøízek", 20), new Meal("brambor", 10));
         service.addToOrder(new Meal("Kuøízek", 20), new Meal("brambor", 10));
         assertEquals(2, service.getNumberOfOrderedMeals());
@@ -101,7 +101,7 @@ public class MealServiceImplementationTest {
      */
     @Test
     public void testGetPriceOfEmptyChosenMeals() {
-        MealServiceImplementation service = new MealServiceImplementation();
+        MealServiceImpl service = new MealServiceImpl();
         assertEquals(0, service.getPriceOfChosenMeals());
     }
       /**
@@ -109,7 +109,7 @@ public class MealServiceImplementationTest {
      */
     @Test
     public void testGetPriceOfChosenMealsWithoutSideDishes() {
-        MealServiceImplementation service = new MealServiceImplementation();
+        MealServiceImpl service = new MealServiceImpl();
          service.addToOrder(new Meal("Rybí polévka", 17), null);
         assertEquals(17, service.getPriceOfChosenMeals());
     }
@@ -118,7 +118,7 @@ public class MealServiceImplementationTest {
      */
     @Test
     public void testGetPriceOfChosenMealsWithSideDishes() {
-        MealServiceImplementation service = new MealServiceImplementation();
+        MealServiceImpl service = new MealServiceImpl();
         service.addToOrder(new Meal("Kuøízek", 20), new Meal("brambor", 10));
         assertEquals(30, service.getPriceOfChosenMeals());
     }
@@ -128,7 +128,7 @@ public class MealServiceImplementationTest {
      */
     @Test
     public void testGetPriceOfMultipleChoosenDishes() {
-        MealServiceImplementation service = new MealServiceImplementation();
+        MealServiceImpl service = new MealServiceImpl();
         service.addToOrder(new Meal("Kuøízek", 20), new Meal("brambor", 10));
         service.addToOrder(new Meal("Kuøízek", 20), new Meal("brambor", 10));
         assertEquals(60, service.getPriceOfChosenMeals());
