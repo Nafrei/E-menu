@@ -1,6 +1,8 @@
 
 package cz.pavi.ocka.el_jidelni_listek;
-
+/*
+pokus
+*/
 import cz.pavi.ocka.el_jidelni_listek.MealServiceImpl;
 import cz.pavi.ocka.el_jidelni_listek.DatabaseHelper;
 import cz.pavi.ocka.el_jidelni_listek.MainController;

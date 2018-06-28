@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!--
+
     The Maven module definition for the client application. This tells Maven which dependencies we want to use and
     how to build our application. Most of the work is taken care of for us by the javafx-maven-plugin. For more
     information on this see: https://github.com/zonski/javafx-maven-plugin

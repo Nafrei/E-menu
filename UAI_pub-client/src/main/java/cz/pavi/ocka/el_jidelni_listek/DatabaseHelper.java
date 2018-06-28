@@ -1,6 +1,8 @@
 
 package cz.pavi.ocka.el_jidelni_listek;
-
+/*
+pokus
+*/
 import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.PreparedStatement;
 import java.io.InputStream;
