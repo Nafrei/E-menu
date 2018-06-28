@@ -15,7 +15,7 @@ public class Order {
     
     private int orderId;
     private int mealId;
-    private Date crated;
+    private Date created;
     private Date closed;
    
     boolean success;
@@ -31,7 +31,7 @@ public class Order {
     }
 
     public Date getCrated() {
-        return crated;
+        return created;
     }
 
     public Date getClosed() {
@@ -55,7 +55,7 @@ public class Order {
     }
 
     public void setCrated(Date crated) {
-        this.crated = crated;
+        this.created = crated;
     }
 
     public void setClosed(Date closed) {
