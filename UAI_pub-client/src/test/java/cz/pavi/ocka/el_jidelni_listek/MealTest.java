@@ -40,7 +40,7 @@ public class MealTest {
     }
 
     /**
-     * Test of getName method, of class Meal.
+     * Test of getName method, compares Name atribute with constructor parameter
      */
     @Test
     public void testGetName() {
@@ -50,7 +50,7 @@ public class MealTest {
     }
 
     /**
-     * Test of getDescription method, of class Meal.
+     * Test of getDescription method, compares Description atribute with constructor parameter
      */
     @Test
     public void testGetDescription() {
@@ -60,7 +60,7 @@ public class MealTest {
     }
 
     /**
-     * Test of getAllergens method, of class Meal.
+     * Test of getAllergens method, compares Allergens atribute with constructor parameter
      */
     @Test
     public void testGetAllergens() {
@@ -70,7 +70,7 @@ public class MealTest {
     }
 
     /**
-     * Test of getQuantity method, of class Meal.
+     * Test of getQuantity method, compares Quantity atribute with constructor parameter
      */
     @Test
     public void testGetQuantity() {
@@ -80,7 +80,7 @@ public class MealTest {
     }
 
     /**
-     * Test of setQuantity method, of class Meal.
+     * Test of setQuantity method, changes Quantity atribute and then compares to expected value
      */
     @Test
     public void testSetQuantity() {
@@ -91,7 +91,7 @@ public class MealTest {
     }
 
     /**
-     * Test of getPrice method, of class Meal.
+     * Test of getPrice method, compares Price atribute with constructor parameter
      */
     @Test
     public void testGetPrice() {
@@ -101,7 +101,7 @@ public class MealTest {
     }
 
     /**
-     * Test of getType method, of class Meal.
+     * Test of getType method, compares Type atribute with constructor parameter
      */
     @Test
     public void testGetType() {
