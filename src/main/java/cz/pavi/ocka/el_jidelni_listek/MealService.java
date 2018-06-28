@@ -14,7 +14,9 @@ import javafx.collections.ObservableList;
  */
 public interface MealService 
 {
-   /**
+    ObservableList<String> getSideDishes();
+    
+    /**
      * Požádá DatabaseHelper o hodnoty z databáze k danému typu jídla a vrátí je jako ObservableList
      * @param type Typ jídla
      */
@@ -33,7 +35,7 @@ public interface MealService
     void addToOrder(Meal meal);
     
     /**
-     * Vezme vybrané jídlo/nápoj a smaže jej z objednávky. 
+     * Vezme vybrané jídlo a smaže je z objednávky. 
      * @param meal Jídlo, které chce uživatel smazat z objednávky.
      */
     void deleteFromOrder(Meal meal);
@@ -67,5 +69,4 @@ public interface MealService
      * @return 
      */
     int getPriceOfChosenMeals();
-    
 }
