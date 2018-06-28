@@ -135,7 +135,7 @@
             <Font size="17.0" />
          </font>
       </Text>
-      <TextField fx:id="table" layoutX="55.0" layoutY="21.0" onMouseExited="#onMysPrycStul" prefHeight="25.0" prefWidth="49.0" />
+      <TextField fx:id="table" layoutX="55.0" layoutY="21.0" onMouseExited="#onMouseExitTableChooser" prefHeight="25.0" prefWidth="49.0" />
       <Text fx:id="warning" fill="#dc3939" layoutX="113.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vyberte stůl (1-5)" wrappingWidth="112.80337524414062">
          <font>
             <Font name="System Bold" size="12.0" />
