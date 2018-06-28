@@ -64,6 +64,9 @@ public class MainController implements Initializable {
     private Button pay;
     
     @FXML
+    private ListView dessertsList;
+    
+    @FXML
     private ImageView kosik;
     
     private MealService service;
@@ -139,20 +142,25 @@ public class MainController implements Initializable {
         {
             if(newValue == soups) 
             {
-                nastavList(SOUPS, (ListView)panel.lookup("#list1"));
+                ListView soupsList = (ListView)panel.lookup("#list1");
+                nastavList(SOUPS, soupsList);
             }
             else if(newValue == mainCourses)
             {
-                nastavList(MAIN_COURSES, (ListView)panel.lookup("#list2"));
+                ListView mainCoursesList = (ListView)panel.lookup("#list2");
+                nastavList(MAIN_COURSES, mainCoursesList);
             }
             else if(newValue == desserts)
             {
-                nastavList(DESSERTS, (ListView)panel.lookup("#list3"));
+                ListView dessertsList = (ListView)panel.lookup("#list3");
+                nastavList(DESSERTS, dessertsList);
             }
             else if(newValue == drinks)
             {
-                nastavList(DRINKS, (ListView)panel.lookup("#list4"));
+                ListView drinksList = (ListView)panel.lookup("#list4");
+                nastavList(DRINKS, drinksList);
             }
+            
         }
         });
     }
@@ -184,30 +192,37 @@ public class MainController implements Initializable {
         @Override
         public void changed(ObservableValue<? extends Meal> observable, Meal oldValue, Meal newValue) 
         {
-            //Label alergenyTextStary = (Label) panel.lookup("#alergenyText" + oldValue.getTyp());
-            //alergenyTextStary.setVisible(false);
+            ImageView obrazek = (ImageView) panel.lookup("#obrazek" + typ);
+            Text nazev = (Text) panel.lookup("#nazev" + typ);
+            Text gramy = (Text) panel.lookup("#gramy" + typ);
+            Label alergeny = (Label) panel.lookup("#alergeny" + typ);
+            Label popis = (Label) panel.lookup("#popis" + typ);
+            Label alergenyText = (Label) panel.lookup("#alergenyText" + typ);
+            Button pridat = (Button) panel.lookup("#pridat" + typ);
+                
+                
             if(newValue != null)
             {
+                System.out.println(list.getSelectionModel().getSelectedIndex());
                 vybranyTyp = newValue.getType();
                 
                 sideDishesBox.setVisible(false);
-                ImageView obrazek = (ImageView) panel.lookup("#obrazek" + typ);
+                
                 obrazek.setImage(newValue.getPicture());
                 
-                Text nazev = (Text) panel.lookup("#nazev" + typ);
+                
                 nazev.setText(newValue.getName());
                 
-                Text gramy = (Text) panel.lookup("#gramy" + typ);
+                
                 gramy.setText(newValue.getQuantity());
                 
-                Label alergeny = (Label) panel.lookup("#alergeny" + typ);
+                
                 alergeny.setText(newValue.getAllergens());
                 
-                Label popis = (Label) panel.lookup("#popis" + typ);
+                
                 popis.setText(newValue.getDescription());
                 
-                Label alergenyText = (Label) panel.lookup("#alergenyText" + typ);
-                Button pridat = (Button) panel.lookup("#pridat" + typ);
+                
                 alergenyText.setVisible(true);
                 if(service.getChosenTable() == 0)
                 {
@@ -222,6 +237,17 @@ public class MainController implements Initializable {
                     sideDishesBox.setItems(service.getSideDishes());
                     sideDishesBox.getSelectionModel().selectFirst();
                 }
+            }
+            else
+            {
+                obrazek.setImage(null);
+                nazev.setText("");
+                gramy.setText("");
+                popis.setText("");
+                alergeny.setText("");
+                alergenyText.setVisible(false);
+                pridat.setVisible(false);
+                sideDishesBox.setVisible(false);
             }
         }
         });
@@ -274,13 +300,11 @@ public class MainController implements Initializable {
         {
             if(table.getText().equals(stoly[i]))
             {
-                System.out.println("jsem tu");
                 service.setChosenTable(Integer.valueOf(table.getText()));
                 table.setDisable(true);
                 warning.setVisible(false);
                 for(int j=1; j<5; j++)
                 {
-                    System.out.println("ahoj");
                     Button pridat = (Button) panel.lookup("#pridat" + i);
                     pridat.setDisable(false);
                 }
