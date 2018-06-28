@@ -17,6 +17,12 @@ public class MealServiceMock implements MealService {
     @Override
     public ObservableList<String> getSideDishes() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        /*
+        ArrayList<Meal> databaseList = {{"Bramboráky", "35"}{"Hranolky", "30"}}
+        MealServicImplementation msi = new MealServiceImplementation();
+        String[] result = msi.getSideDishes();
+        assertEquals(ObservableList(new String[] {Bramboráky, "nazdar"}), result);
+        */
     }
 
     @Override
