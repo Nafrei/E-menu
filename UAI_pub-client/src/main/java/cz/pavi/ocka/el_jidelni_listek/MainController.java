@@ -295,7 +295,7 @@ public class MainController implements Initializable {
                     {
                         String name = j.getName();
                         String price = String.valueOf(j.getPrice());
-                        infoSideDishes.add(name + " (" + price + " Kƒç)");
+                        infoSideDishes.add(name + " (" + price + " Kc)");
                     }
                     
                     ObservableList<String> info = FXCollections.observableArrayList(infoSideDishes);
@@ -333,7 +333,7 @@ public class MainController implements Initializable {
                 } 
                 else 
                 {
-                    setText(jidlo.getName() + "\n" + jidlo.getPrice() + " KË");
+                    setText(jidlo.getName() + "\n" + jidlo.getPrice() + " Kc");
                     ImageView obrazek = new ImageView();
                     obrazek.setFitHeight(80);
                     obrazek.setFitWidth(80);
