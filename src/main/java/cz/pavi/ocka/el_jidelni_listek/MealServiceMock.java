@@ -6,6 +6,7 @@
 package cz.pavi.ocka.el_jidelni_listek;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import javafx.collections.ObservableList;
 
 /**
@@ -15,14 +16,18 @@ import javafx.collections.ObservableList;
 public class MealServiceMock implements MealService {
 
     @Override
-    public ObservableList<String> getSideDishes() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-        /*
-        ArrayList<Meal> databaseList = {{"Bramboráky", "35"}{"Hranolky", "30"}}
-        MealServicImplementation msi = new MealServiceImplementation();
+    public ObservableList<String> getSideDishes() {    
+      /*  ArrayList<Meal> databaseList = new ArrayList<>();
+        databaseList.add(new Meal("Bramborák", 35));
+        MealServiceImplementation msi = new MealServiceImplementation();
+        msi.getSideDishes();
+	assertEquals(databaseList, msi);   
+      /*  {{"Bramboráky", "35"},{"Hranolky", "30"}};
+        MealServiceImplementation msi = new MealServiceImplementation();
         String[] result = msi.getSideDishes();
         assertEquals(ObservableList(new String[] {Bramboráky, "nazdar"}), result);
         */
+      throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
@@ -37,7 +42,15 @@ public class MealServiceMock implements MealService {
 
     @Override
     public void addToOrder(Meal meal) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        //String name, String description, String allergens, String quantity, int price, int type, Image picture
+     /*   
+        ArrayList<Meal> databaseList = new ArrayList<>();
+        databaseList.add(new Meal("Rajčatová polévka", "Aaaa", "1,2", "100mg", 0, 0, null));
+        MealServiceImplementation msi = new MealServiceImplementation();
+        msi.addToOrder(meal);
+        assertEquals(databaseList, ArrayList<meal>);
+        */
     }
 
     @Override
@@ -53,6 +66,7 @@ public class MealServiceMock implements MealService {
     @Override
     public int getChosenTable() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
     }
 
     
