@@ -36,34 +36,66 @@ public class Meal {
         this.price = price;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getName() {
         return mealName;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getDescription() {
         return description;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getAllergens() {
         return allergens;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getQuantity() {
         return quantity;
     }
 
+    /**
+     *
+     * @param quantity
+     */
     public void setQuantity(String quantity) {
         this.quantity = quantity;
     }
 
+    /**
+     *
+     * @return
+     */
     public int getPrice() {
         return price;
     }
 
+    /**
+     *
+     * @return
+     */
     public Image getPicture() {
         return picture;
     }
 
+    /**
+     *
+     * @return
+     */
     public int getType() {
         return type;
     }
