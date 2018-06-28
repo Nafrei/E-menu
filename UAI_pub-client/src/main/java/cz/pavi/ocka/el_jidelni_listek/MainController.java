@@ -157,7 +157,7 @@ public class MainController implements Initializable {
                     service.addToOrder(selectedMeal, selectedSideDishes);
 
                     numberOfItems.setText(String.valueOf(service.getNumberOfOrderedMeals()));
-                    celkovaCena.setText(String.valueOf(service.getPriceOfChosenMeals() + " KÄ?"));
+                    celkovaCena.setText(String.valueOf(service.getPriceOfChosenMeals() + " CZK"));
                 }
 
             });
