@@ -12,7 +12,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="hlavniOkno" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="429.0" prefWidth="649.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cz.pavi.ocka.el_jidelni_listek.MainController">
+<AnchorPane fx:id="hlavniOkno" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="429.0" prefWidth="649.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cz.pavi.ocka.el_jidelni_listek.MainController">
    <children>
       <TabPane fx:id="panel" layoutY="61.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="359.0" prefWidth="649.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
         <tabs>
@@ -21,7 +21,7 @@
               <AnchorPane fx:id="panelTypu" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="333.0" prefWidth="649.0">
                      <children>
                         <ListView fx:id="list1" prefHeight="332.0" prefWidth="207.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" />
-                        <AnchorPane fx:id="panelDetailu" layoutX="200.0" prefHeight="333.0" prefWidth="445.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="199.99999999999994" AnchorPane.rightAnchor="-69.99999999999989" AnchorPane.topAnchor="0.0">
+                        <AnchorPane fx:id="panelDetailu" layoutX="200.0" prefHeight="333.0" prefWidth="519.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="-70.0" AnchorPane.topAnchor="0.0">
                            <children>
                               <ImageView fx:id="obrazek1" fitHeight="157.0" fitWidth="200.0" layoutX="23.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true" />
                               <Text fx:id="nazev1" layoutX="23.0" layoutY="195.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="199.333251953125" AnchorPane.leftAnchor="23.0" AnchorPane.topAnchor="166.943359375">
@@ -77,8 +77,8 @@
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <ListView fx:id="list3" layoutX="203.0" layoutY="-2.0" prefHeight="332.0" prefWidth="207.0" AnchorPane.leftAnchor="0.0" />
-                        <AnchorPane fx:id="panelDetailu2" layoutX="203.0" layoutY="-2.0" prefHeight="333.0" prefWidth="445.0">
+                        <ListView fx:id="list3" layoutX="203.0" layoutY="-2.0" prefHeight="332.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" />
+                        <AnchorPane fx:id="panelDetailu2" layoutX="203.0" layoutY="-2.0" prefHeight="333.0" prefWidth="447.0">
                            <children>
                               <ImageView fx:id="obrazek3" fitHeight="157.0" fitWidth="200.0" layoutX="23.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true" />
                               <Text fx:id="nazev3" layoutX="23.0" layoutY="195.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="199.333251953125" AnchorPane.leftAnchor="23.0" AnchorPane.topAnchor="166.943359375">
@@ -104,7 +104,7 @@
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="330.0" prefWidth="638.0">
                      <children>
-                        <ListView fx:id="list4" layoutX="203.0" layoutY="-2.0" prefHeight="332.0" prefWidth="207.0" AnchorPane.leftAnchor="0.0" />
+                        <ListView fx:id="list4" layoutX="203.0" layoutY="-2.0" prefHeight="332.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" />
                         <AnchorPane fx:id="panelDetailu3" layoutX="203.0" layoutY="-2.0" prefHeight="333.0" prefWidth="445.0">
                            <children>
                               <ImageView fx:id="obrazek4" fitHeight="157.0" fitWidth="200.0" layoutX="23.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true" />
