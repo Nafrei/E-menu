@@ -1,31 +1,56 @@
 package cz.pavi.ocka.el_jidelni_listek;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import javafx.collections.ObservableList;
 
 public interface MealService {
 
     List<Meal> getSideDishes();
 
+    /**
+     * Asks DatabaseHelper for values of given type of food from the database
+     * and returns them as List.
+     *
+     * @param type type of food
+     * @return
+     */
     List<Meal> getCurrentMeals(int type);
 
     HashMap<Meal, Meal> getChosenMeals();
 
     //List<Order> getOrdersByTableId(int tableId);
+    
     void addToOrder(Meal meal, Meal sideDishes);
 
-    void deleteOrders(int tableID);
-
-    void makeOrder(int tableID, List<Meal> orderedMeals);
+    /**
+     * The method which allows delete orders. This method serves for the next 
+     * order on the same table.
+     * @param tableId Number of the table where the order will be deleted.
+     */
+    void deleteOrders(int tableId);
+    
+    /**
+     * The method which allows you to make an order.
+     * @param tableId Number of the table
+     * @param orderedMeals List of ordered meals
+     */
+    void makeOrder(int tableId, List<Meal> orderedMeals);
 
     void setChosenTable(int number);
 
     int getChosenTable();
-
+    
+    /**
+     * The method which is counting the number of your ordered items.
+     * @return Number
+     */
     int getNumberOfOrderedMeals();
 
+    
+    /**
+     * The method which returns price of meals which you added to your order.
+     * @return 
+     */
     int getPriceOfChosenMeals();
 
 }
