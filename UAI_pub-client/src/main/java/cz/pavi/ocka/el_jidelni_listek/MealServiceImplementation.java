@@ -35,13 +35,7 @@ public class MealServiceImplementation implements MealService {
         return databaseList;
     }
 
-    /**
-     * Asks DatabaseHelper for values of given type of food from the database
-     * and returns them as ObservableList.
-     *
-     * @param type type of food
-     * @return
-     */
+    
     @Override
     public List<Meal> getCurrentMeals(int type) {
         List<Meal> databaseList = dt.nactiDataZDatabaze(type);
