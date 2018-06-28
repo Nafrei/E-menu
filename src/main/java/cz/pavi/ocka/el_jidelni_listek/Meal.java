@@ -59,6 +59,11 @@ public class Meal {
     {
         return quantity;
     }
+
+    public void setQuantity(String quantity) {
+        this.quantity = quantity;
+    }
+    
     
     public int getPrice()
     {
