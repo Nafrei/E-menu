@@ -6,7 +6,6 @@ import java.util.List;
 
 public class MealServiceMock implements MealService {
 
-    
     public List<Meal> getSideDishes() {
         List<Meal> databaseList = new ArrayList<>();
         databaseList.add(new Meal("Bramborak", 35));
@@ -26,13 +25,13 @@ public class MealServiceMock implements MealService {
     @Override
     public void addToOrder(Meal meal, Meal sideDishes) {
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-         
+
         ArrayList<Meal> databaseList = new ArrayList<>();
         databaseList.add(new Meal("Rajcatova polevka", "Aaaa", "1,2", "100ml", 0, 0, null));
         MealServiceImpl msi = new MealServiceImpl();
         msi.addToOrder(meal, sideDishes);
         //System.out.println("Add to order " + msi);
-        
+
     }
 
     @Override
@@ -45,9 +44,8 @@ public class MealServiceMock implements MealService {
 
     @Override
     public void makeOrder() {
-        
+
         //System.out.println("Make order " + orderedMeals);
-        
     }
 
     @Override

@@ -10,8 +10,6 @@ public class MealServiceImpl implements MealService {
 
     int chosenTable = 0;
 
-    
-
     private HashMap<Meal, Meal> chosenMeals = null;
 
     private List<Meal> currentMeals = null;
@@ -33,7 +31,6 @@ public class MealServiceImpl implements MealService {
         return databaseList;
     }
 
-    
     @Override
     public List<Meal> getCurrentMeals(int type) {
         List<Meal> databaseList = dt.nactiDataZDatabaze(type);
@@ -50,11 +47,10 @@ public class MealServiceImpl implements MealService {
     @Override
     public void makeOrder() {
         System.out.println(getNumberOfOrderedMeals());
-        if(getNumberOfOrderedMeals() != 0)
-        {
+        if (getNumberOfOrderedMeals() != 0) {
             dt.addOrderToDatabase(chosenTable, chosenMeals);
             chosenMeals.clear();
-            
+
         }
     }
 

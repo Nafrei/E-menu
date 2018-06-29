@@ -11,10 +11,10 @@ public class MainApp extends Application {
 
     /**
      * Starts the application, loads the window with stage set.
-     * @param stage 
-     * @throws Exception 
+     *
+     * @param stage
+     * @throws Exception
      */
-    
     @Override
     public void start(Stage stage) throws Exception {
         //Parent root = FXMLLoader.load(getClass().getResource("Hlavni_okno.fxml"));
