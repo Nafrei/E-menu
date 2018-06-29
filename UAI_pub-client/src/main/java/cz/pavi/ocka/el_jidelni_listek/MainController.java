@@ -97,11 +97,11 @@ public class MainController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        soups.setGraphic(getImageFromLink("file:images/polevka2_1.png"));
-        mainCourses.setGraphic(getImageFromLink("file:images/smazak1_4.png"));
-        desserts.setGraphic(getImageFromLink("file:images/dezerty_zmrzlina.png"));
-        drinks.setGraphic(getImageFromLink("file:images/napoj_cappuccino.png"));
-        cart.setImage(new Image("file:images/kosik.png"));
+        soups.setGraphic(getImageFromLink("/images/polevka2_1.png"));
+        mainCourses.setGraphic(getImageFromLink("/images/smazak1_4.png"));
+        desserts.setGraphic(getImageFromLink("/images/dezerty_zmrzlina.png"));
+        drinks.setGraphic(getImageFromLink("/images/napoj_cappuccino.png"));
+        cart.setImage(new Image("/images/kosik.png"));
 
         cart.setOnMouseClicked((MouseEvent e) -> {
             openNewWindow();
