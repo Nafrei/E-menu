@@ -16,7 +16,7 @@ public interface MealService {
      */
     List<Meal> getCurrentMeals(int type);
 
-    HashMap<Meal, Meal> getChosenMeals();
+    HashMap <Meal, Meal> getChosenMeals();
 
     //List<Order> getOrdersByTableId(int tableId);
     

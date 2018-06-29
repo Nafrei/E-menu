@@ -142,11 +142,11 @@ public class MainController implements Initializable {
     void setEventHandlerOnAddOrderButtons() {
         for (int i = 1; i < 5; i++) {
             Button buttonAdd = (Button) panel.lookup("#added" + i);
-
+            
             buttonAdd.setOnAction(new EventHandler<ActionEvent>() {
                 @Override
                 public void handle(ActionEvent e) {
-
+                        System.out.println("zdaaar");
                     Meal selectedSideDishes = null;
 
                     if (chosenType == 2) {
