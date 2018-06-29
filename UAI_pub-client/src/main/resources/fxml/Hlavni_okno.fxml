@@ -12,7 +12,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="mainWindow" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="442.0" prefWidth="649.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cz.pavi.ocka.el_jidelni_listek.MainController">
+<AnchorPane fx:id="mainWindow" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="442.0" prefWidth="630.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cz.pavi.ocka.el_jidelni_listek.MainController">
    <children>
       <TabPane fx:id="panel" layoutY="61.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="359.0" prefWidth="649.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
         <tabs>
@@ -129,7 +129,7 @@
             </Tab>
         </tabs>
       </TabPane>
-      <Button fx:id="order" layoutX="507.0" layoutY="12.0" mnemonicParsing="false" onAction="#onOrderClicked" prefHeight="39.0" prefWidth="127.0" text="Objednat">
+      <Button fx:id="order" layoutX="486.0" layoutY="15.0" mnemonicParsing="false" onAction="#onOrderClicked" prefHeight="39.0" prefWidth="127.0" text="Objednat">
          <font>
             <Font name="System Bold" size="12.0" />
          </font></Button>
