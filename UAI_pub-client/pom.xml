@@ -104,11 +104,11 @@
     <dependencies>
 
         <!-- Common module -->
-        <dependency>
+<!--        <dependency>
             <groupId>cz.pavi.ocka</groupId>
             <artifactId>UAI_pub-common</artifactId>
             <version>1.0-SNAPSHOT</version>
-        </dependency>
+        </dependency>-->
 
         <!-- Spring and supporting toolkits -->
         <dependency>
