@@ -2,6 +2,7 @@ package cz.pavi.ocka.el_jidelni_listek;
 
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -10,6 +11,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 import javafx.scene.image.ImageView;
+import javafx.util.Pair;
 
 /**
  * FXML Controller class
@@ -37,7 +39,11 @@ public class OrderedMealsController implements Initializable {
     }
 
     private void loadList() {
-        ArrayList<Meal> orderedMeals = new ArrayList<>(service.getChosenMeals().keySet());
+        ArrayList<Meal> orderedMeals = new ArrayList<>();
+        for(Pair<Meal, Meal> j: service.getChosenMeals())
+        {
+            orderedMeals.add(j.getKey());
+        }
         ObservableList<Meal> observableOrderedMeals = FXCollections.observableArrayList(orderedMeals);
         listOfOrderedMeals.setItems(observableOrderedMeals);
 

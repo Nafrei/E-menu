@@ -3,6 +3,7 @@ package cz.pavi.ocka.el_jidelni_listek;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import javafx.util.Pair;
 
 public class MealServiceMock implements MealService {
 
@@ -18,7 +19,7 @@ public class MealServiceMock implements MealService {
     }
 
     @Override
-    public HashMap<Meal, Meal> getChosenMeals() {
+    public List<Pair<Meal, Meal>> getChosenMeals() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 

@@ -1,8 +1,11 @@
 package cz.pavi.ocka.el_jidelni_listek;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import javafx.collections.FXCollections;
+import javafx.util.Pair;
 
 public class MealServiceImpl implements MealService {
 
@@ -10,7 +13,7 @@ public class MealServiceImpl implements MealService {
 
     int chosenTable = 0;
 
-    private HashMap<Meal, Meal> chosenMeals = null;
+    private List<Pair<Meal, Meal>> chosenMeals;
 
     private List<Meal> currentMeals = null;
 
@@ -20,8 +23,9 @@ public class MealServiceImpl implements MealService {
      * Constructor. Creates a new instance of Databazovnik.
      */
     public MealServiceImpl() {
+        this.chosenMeals = new ArrayList<Pair<Meal, Meal>>();
         dt = new DatabaseHelper();
-        chosenMeals = new HashMap<Meal, Meal>();
+        //chosenMeals = new Pair<Meal, Meal();
     }
 
     @Override
@@ -41,7 +45,8 @@ public class MealServiceImpl implements MealService {
 
     @Override
     public void addToOrder(Meal meal, Meal sideDishes) {
-        chosenMeals.put(meal, sideDishes);
+        Pair<Meal, Meal> pair = new Pair<>(meal, sideDishes);
+        chosenMeals.add(pair);
     }
 
     @Override
@@ -65,13 +70,13 @@ public class MealServiceImpl implements MealService {
     }
 
     @Override
-    public HashMap<Meal, Meal> getChosenMeals() {
+    public List<Pair<Meal, Meal>> getChosenMeals() {
         return chosenMeals;
     }
 
     @Override
     public int getNumberOfOrderedMeals() {
-        return chosenMeals.keySet().size();
+        return chosenMeals.size();
     }
 
     @Override
@@ -82,10 +87,10 @@ public class MealServiceImpl implements MealService {
     @Override
     public int getPriceOfChosenMeals() {
         int sum = 0;
-        for (Meal j : chosenMeals.keySet()) {
-            sum += j.getPrice();
-            if (chosenMeals.get(j) != null) {
-                sum += chosenMeals.get(j).getPrice();
+        for (Pair<Meal, Meal> j : chosenMeals) {
+            sum += j.getKey().getPrice();
+            if (j.getValue() != null) {
+                sum += j.getValue().getPrice();
             }
         }
 

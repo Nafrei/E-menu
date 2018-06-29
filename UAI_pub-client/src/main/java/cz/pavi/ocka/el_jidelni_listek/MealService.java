@@ -2,6 +2,8 @@ package cz.pavi.ocka.el_jidelni_listek;
 
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import javafx.util.Pair;
 
 public interface MealService {
 
@@ -16,7 +18,7 @@ public interface MealService {
      */
     List<Meal> getCurrentMeals(int type);
 
-    HashMap <Meal, Meal> getChosenMeals();
+    List<Pair<Meal, Meal>> getChosenMeals();
 
     //List<Order> getOrdersByTableId(int tableId);
     void addToOrder(Meal meal, Meal sideDishes);

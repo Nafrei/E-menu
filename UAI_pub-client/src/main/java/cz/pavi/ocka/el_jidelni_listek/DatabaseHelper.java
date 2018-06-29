@@ -9,8 +9,11 @@ import java.util.ArrayList;
 import java.awt.image.BufferedImage;
 import java.sql.SQLException;
 import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import javafx.embed.swing.SwingFXUtils;
 import javafx.scene.image.Image;
+import javafx.util.Pair;
 import javax.imageio.ImageIO;
 
 public class DatabaseHelper {
@@ -93,21 +96,21 @@ public class DatabaseHelper {
      * @param chosenTable chosen Table
      * @param chosenMeals chosen Meals
      */
-    public void addOrderToDatabase(int chosenTable, HashMap<Meal, Meal> chosenMeals) {
+    public void addOrderToDatabase(int chosenTable, List<Pair<Meal, Meal>> chosenMeals) {
 
-        for (Meal j : chosenMeals.keySet()) {
+        for (Pair<Meal, Meal> j : chosenMeals) {
             try {
 
                 final String query = "INSERT INTO Objednavky(CisloStolu, NazevJidla, Priloha, Cena)" + " VALUES(?, ?, ?, ?)";
                 final PreparedStatement ps = (PreparedStatement) conn.prepareStatement(query);
                 ps.setInt(1, chosenTable);
-                ps.setString(2, j.getName());
-                if (chosenMeals.get(j) != null) {
-                    ps.setString(3, chosenMeals.get(j).getName());
-                    ps.setInt(4, chosenMeals.get(j).getPrice() + j.getPrice());
+                ps.setString(2, j.getKey().getName());
+                if (j.getValue() != null) {
+                    ps.setString(3, j.getValue().getName());
+                    ps.setInt(4, j.getValue().getPrice() + j.getKey().getPrice());
                 } else {
                     ps.setString(3, null);
-                    ps.setInt(4, j.getPrice());
+                    ps.setInt(4, j.getKey().getPrice());
                 }
 
                 ps.executeUpdate();
