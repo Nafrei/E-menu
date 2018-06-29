@@ -43,16 +43,6 @@ public class MealServiceImplTest {
     }
 
     /**
-     * Test of makeOrder method, of class MealServiceImpl.
-     */
-    @Test
-    public void testMakeOrder() {
-         
-         
-         
-    }
-
-    /**
      * Test of setChosenTable method, of class MealServiceImplementation.
      */
     @Test
@@ -71,7 +61,6 @@ public class MealServiceImplTest {
      */
     @Test
     public void testGetChosenMeals() {
-        
     }
 
     /**
@@ -85,29 +74,14 @@ public class MealServiceImplTest {
         assertEquals(service.getNumberOfOrderedMeals(), 2);
     }
 
-    /**
-     * Test of deleteOrders method, of class MealServiceImplementation.
-     */
-    @Test
-    public void testDeleteOrders() {
-        
-    }
 
-    /**
-     * Test of getPriceOfChosenMeals method, of class MealServiceImplementation.
-     */
-    @Test
-    public void testGetPriceOfEmptyChosenMeals() {
-        MealServiceImpl service = new MealServiceImpl();
-        assertEquals(0, service.getPriceOfChosenMeals());
-    }
       /**
      * Test of getPriceOfChosenMeals method, of class MealServiceImplementation.
      */
     @Test
     public void testGetPriceOfChosenMealsWithoutSideDishes() {
         MealServiceImpl service = new MealServiceImpl();
-         service.addToOrder(new Meal("Rybí polévka", 17), null);
+         service.addToOrder(new Meal("Rybi polevka", 17), null);
         assertEquals(17, service.getPriceOfChosenMeals());
     }
       /**
@@ -116,7 +90,7 @@ public class MealServiceImplTest {
     @Test
     public void testGetPriceOfChosenMealsWithSideDishes() {
         MealServiceImpl service = new MealServiceImpl();
-        service.addToOrder(new Meal("Kuøízek", 20), new Meal("brambor", 10));
+        service.addToOrder(new Meal("Kurizek", 20), new Meal("brambor", 10));
         assertEquals(30, service.getPriceOfChosenMeals());
     }
     
