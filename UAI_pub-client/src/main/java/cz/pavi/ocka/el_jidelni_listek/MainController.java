@@ -272,7 +272,7 @@ public class MainController implements Initializable {
                 } else {
                     picture.setImage(null);
                     named.setText("");
-                    description.setText("");
+                    quantity.setText("");
                     description.setText("");
                     allergens.setText("");
                     allergensText.setVisible(false);

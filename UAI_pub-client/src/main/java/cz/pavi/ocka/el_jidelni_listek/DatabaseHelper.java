@@ -7,6 +7,7 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.awt.image.BufferedImage;
+import java.io.IOException;
 import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.List;
@@ -84,8 +85,12 @@ public class DatabaseHelper {
             ps.close();
             result.close();
 
-        } catch (Exception ex) {
-            System.out.println("Chyba pri prenosu z databaze.");
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+        catch(IOException io)
+        {
+            System.out.println("IO Exception");
         }
         return meals;
     }

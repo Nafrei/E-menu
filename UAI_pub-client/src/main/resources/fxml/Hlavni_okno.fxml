@@ -12,7 +12,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="mainWindow" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="442.0" prefWidth="636.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cz.pavi.ocka.el_jidelni_listek.MainController">
+<AnchorPane fx:id="mainWindow" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="427.0" prefWidth="636.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cz.pavi.ocka.el_jidelni_listek.MainController">
    <children>
       <TabPane fx:id="panel" layoutY="61.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="359.0" prefWidth="649.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
         <tabs>
@@ -102,9 +102,9 @@
             </Tab>
             <Tab fx:id="drinks" text="Napoje">
               <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="330.0" prefWidth="638.0">
+                <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="333.0" prefWidth="649.0">
                      <children>
-                        <ListView fx:id="list4" layoutX="203.0" layoutY="-2.0" prefHeight="332.0" prefWidth="207.0" AnchorPane.leftAnchor="0.0" />
+                        <ListView fx:id="list4" layoutX="203.0" layoutY="-2.0" prefHeight="353.0" prefWidth="207.0" AnchorPane.leftAnchor="0.0" />
                         <AnchorPane fx:id="panelDetail3" layoutX="203.0" layoutY="-2.0" prefHeight="333.0" prefWidth="445.0">
                            <children>
                               <ImageView fx:id="picture4" fitHeight="157.0" fitWidth="200.0" layoutX="23.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true" />
