@@ -34,7 +34,7 @@ public interface MealService {
      * @param tableId Number of the table
      * @param orderedMeals List of ordered meals
      */
-    void makeOrder(int tableId, List<Meal> orderedMeals);
+    void makeOrder();
 
     void setChosenTable(int number);
 

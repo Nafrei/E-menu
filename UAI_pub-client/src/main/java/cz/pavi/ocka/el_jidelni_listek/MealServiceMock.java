@@ -44,11 +44,8 @@ public class MealServiceMock implements MealService {
     }
 
     @Override
-    public void makeOrder(int tableId, List<Meal> orderedMeals) {
-        tableId = 1;
-        orderedMeals = new ArrayList<>();
-        orderedMeals.add(new Meal("Dzus", 35));
-        orderedMeals.add(new Meal("Dort", 60));
+    public void makeOrder() {
+        
         //System.out.println("Make order " + orderedMeals);
         
     }

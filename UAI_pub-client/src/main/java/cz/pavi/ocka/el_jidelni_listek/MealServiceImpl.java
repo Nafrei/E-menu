@@ -10,7 +10,7 @@ public class MealServiceImpl implements MealService {
 
     int chosenTable = 0;
 
-    int numberOfOrderedMeals = 0;
+    
 
     private HashMap<Meal, Meal> chosenMeals = null;
 
@@ -48,8 +48,14 @@ public class MealServiceImpl implements MealService {
     }
 
     @Override
-    public void makeOrder(int tableID, List<Meal> orderedMeals) {
-        //To change body of generated methods, choose Tools | Templates.
+    public void makeOrder() {
+        System.out.println(getNumberOfOrderedMeals());
+        if(getNumberOfOrderedMeals() != 0)
+        {
+            dt.addOrderToDatabase(chosenTable, chosenMeals);
+            chosenMeals.clear();
+            
+        }
     }
 
     @Override
@@ -69,7 +75,7 @@ public class MealServiceImpl implements MealService {
 
     @Override
     public int getNumberOfOrderedMeals() {
-        return chosenMeals.size();
+        return chosenMeals.keySet().size();
     }
 
     @Override

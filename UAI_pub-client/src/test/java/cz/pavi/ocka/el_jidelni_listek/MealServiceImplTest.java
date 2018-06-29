@@ -47,13 +47,7 @@ public class MealServiceImplTest {
      */
     @Test
     public void testMakeOrder() {
-         MealServiceImpl service = new MealServiceImpl();
-         try {
-            service.makeOrder(1, null);
-                         assertTrue(true);
-        } catch (Exception e) {
-            fail("Exception occured");
-        }
+         
          
          
     }

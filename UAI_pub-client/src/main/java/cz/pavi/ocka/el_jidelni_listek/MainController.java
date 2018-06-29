@@ -24,6 +24,8 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
+import javafx.scene.control.Spinner;
+import javafx.scene.control.SpinnerValueFactory;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
 import javafx.scene.control.TextField;
@@ -44,6 +46,9 @@ public class MainController implements Initializable {
     private Tab desserts;
     @FXML
     private Tab drinks;
+    
+    @FXML
+    private Button confirm;
 
     @FXML
     private ChoiceBox sideDishesBox;
@@ -52,7 +57,7 @@ public class MainController implements Initializable {
     private TabPane panel;
 
     @FXML
-    private TextField table;
+    private Spinner<Integer> table;
 
     @FXML
     private Text warning;
@@ -64,7 +69,7 @@ public class MainController implements Initializable {
     private Label totalPrice;
 
     @FXML
-    private Button pay;
+    private Button order;
 
     @FXML
     private ImageView cart;
@@ -74,6 +79,8 @@ public class MainController implements Initializable {
     private MealService service;
 
     private int chosenType = 1;
+    
+    private SpinnerValueFactory<Integer> valueFactory;
 
     private final int SOUPS = 1;
     private final int MAIN_COURSES = 2;
@@ -126,6 +133,8 @@ public class MainController implements Initializable {
             Button added = (Button) panel.lookup("#added" + i);
             added.setVisible(false);
         }
+        
+        fillSpinner();
 
         checkChangedTab();
     }
@@ -310,22 +319,35 @@ public class MainController implements Initializable {
 
         return imageView;
     }
+    
+    private void fillSpinner()
+    {
+        SpinnerValueFactory<Integer> valueFactory =
+                new SpinnerValueFactory.IntegerSpinnerValueFactory(1, 5, 1);
+        table.setValueFactory(valueFactory);
+    }
 
     @FXML
-    public void onMouseExitTableChooser(MouseEvent mouseEvent) {
-        String[] stoly = {"1", "2", "3", "4", "5"};
-        for (int i = 0; i < stoly.length; i++) {
-            if (table.getText().equals(stoly[i])) {
-                service.setChosenTable(Integer.valueOf(table.getText()));
-                table.setDisable(true);
-                warning.setVisible(false);
-                for (int j = 1; j < 5; j++) {
-                    Button added = (Button) panel.lookup("#added" + i);
-                    added.setDisable(false);
-                }
-            }
+    public void onTableConfirm(ActionEvent actionEvent) {
+        service.setChosenTable(Integer.valueOf(table.getValue()));
+        table.setDisable(true);
+        confirm.setDisable(true);
+        warning.setVisible(false);
+        for (int j = 1; j < 5; j++) {
+            Button added = (Button) panel.lookup("#added" + j);
+            added.setDisable(false);
         }
     }
+    
+    @FXML
+    public void onOrderClicked(ActionEvent actionEvent)
+    {
+        service.makeOrder();
+        numberOfItems.setText(String.valueOf(service.getNumberOfOrderedMeals()));
+        totalPrice.setText(String.valueOf(service.getPriceOfChosenMeals() + " CZK"));
+    }
+        
+    
 
     private void openNewWindow() {
 

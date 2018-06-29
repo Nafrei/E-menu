@@ -7,6 +7,8 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.awt.image.BufferedImage;
+import java.sql.SQLException;
+import java.util.HashMap;
 import javafx.embed.swing.SwingFXUtils;
 import javafx.scene.image.Image;
 import javax.imageio.ImageIO;
@@ -83,6 +85,42 @@ public class DatabaseHelper {
             System.out.println("Chyba pri prenosu z databaze.");
         }
         return meals;
+    }
+    
+    public void addOrderToDatabase(int chosenTable, HashMap<Meal, Meal>chosenMeals)
+    {
+       
+        
+            for (Meal j : chosenMeals.keySet()) 
+            {
+                try {
+                
+                final String query = "INSERT INTO Objednavky(CisloStolu, NazevJidla, Priloha, Cena)" + " VALUES(?, ?, ?, ?)";
+                final PreparedStatement ps = (PreparedStatement) conn.prepareStatement(query);
+                ps.setInt(1, chosenTable);
+                ps.setString(2, j.getName());
+                if (chosenMeals.get(j) != null) 
+                {
+                    ps.setString(3, chosenMeals.get(j).getName());
+                    ps.setInt(4, chosenMeals.get(j).getPrice()+j.getPrice());
+                }
+                else
+                {
+                    ps.setString(3, null);
+                    ps.setInt(4, j.getPrice());
+                }
+               
+                ps.executeUpdate();
+               
+                }catch(SQLException ex)
+                {
+                    System.out.println(ex.getMessage());
+                }
+            }
+            
+            
+        
+        
     }
 
 }
