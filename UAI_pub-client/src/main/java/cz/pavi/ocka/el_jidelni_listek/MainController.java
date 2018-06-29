@@ -163,7 +163,7 @@ public class MainController implements Initializable {
                     }
                     ListView list = (ListView) panel.lookup("#list" + chosenType);
                     Meal selectedMeal = (Meal) list.getSelectionModel().getSelectedItem();
-                    service.addToOrder(selectedMeal, selectedSideDishes);
+                    service.addToCart(selectedMeal, selectedSideDishes);
 
                     numberOfItems.setText(String.valueOf(service.getNumberOfOrderedMeals()));
                     totalPrice.setText(String.valueOf(service.getPriceOfChosenMeals() + " CZK"));
@@ -282,7 +282,7 @@ public class MainController implements Initializable {
             }
         });
 
-        ObservableList currentMealsList = FXCollections.observableArrayList(service.getCurrentMeals(typ));
+        ObservableList currentMealsList = FXCollections.observableArrayList(service.getMealsByType(typ));
         list.setItems(currentMealsList);
 
         list.setCellFactory(param -> new ListCell<Meal>() {

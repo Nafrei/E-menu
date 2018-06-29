@@ -36,7 +36,7 @@ public class MealServiceImpl implements MealService {
     }
 
     @Override
-    public List<Meal> getCurrentMeals(int type) {
+    public List<Meal> getMealsByType(int type) {
         List<Meal> databaseList = dt.nactiDataZDatabaze(type);
         currentMeals = FXCollections.observableArrayList(databaseList);
 
@@ -44,7 +44,7 @@ public class MealServiceImpl implements MealService {
     }
 
     @Override
-    public void addToOrder(Meal meal, Meal sideDishes) {
+    public void addToCart(Meal meal, Meal sideDishes) {
         Pair<Meal, Meal> pair = new Pair<>(meal, sideDishes);
         chosenMeals.add(pair);
     }
@@ -70,7 +70,7 @@ public class MealServiceImpl implements MealService {
     }
 
     @Override
-    public List<Pair<Meal, Meal>> getChosenMeals() {
+    public List<Pair<Meal, Meal>> getMealsInCart() {
         return chosenMeals;
     }
 
@@ -95,6 +95,16 @@ public class MealServiceImpl implements MealService {
         }
 
         return sum;
+    }
+
+    @Override
+    public List<Pair<Meal, Meal>> getOrders() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public List<Pair<Meal, Meal>> getOrdersByTableId(int tableID) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }

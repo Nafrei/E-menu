@@ -40,7 +40,7 @@ public class OrderedMealsController implements Initializable {
 
     private void loadList() {
         ArrayList<Meal> orderedMeals = new ArrayList<>();
-        for(Pair<Meal, Meal> j: service.getChosenMeals())
+        for(Pair<Meal, Meal> j: service.getMealsInCart())
         {
             orderedMeals.add(j.getKey());
         }

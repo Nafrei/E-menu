@@ -14,23 +14,23 @@ public class MealServiceMock implements MealService {
     }
 
     @Override
-    public List<Meal> getCurrentMeals(int type) {
+    public List<Meal> getMealsByType(int type) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public List<Pair<Meal, Meal>> getChosenMeals() {
+    public List<Pair<Meal, Meal>> getMealsInCart() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public void addToOrder(Meal meal, Meal sideDishes) {
+    public void addToCart(Meal meal, Meal sideDishes) {
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
 
         ArrayList<Meal> databaseList = new ArrayList<>();
         databaseList.add(new Meal("Rajcatova polevka", "Aaaa", "1,2", "100ml", 0, 0, null));
         MealServiceImpl msi = new MealServiceImpl();
-        msi.addToOrder(meal, sideDishes);
+        msi.addToCart(meal, sideDishes);
         //System.out.println("Add to order " + msi);
 
     }
@@ -66,6 +66,16 @@ public class MealServiceMock implements MealService {
 
     @Override
     public int getPriceOfChosenMeals() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public List<Pair<Meal, Meal>> getOrders() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public List<Pair<Meal, Meal>> getOrdersByTableId(int tableID) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 

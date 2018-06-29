@@ -26,19 +26,19 @@ public class MealServiceImplTest {
     }
 
     /**
-     * Test of getCurrentMeals method, of class MealServiceImpl.
+     * Test of getMealsByType method, of class MealServiceImpl.
      */
     @Test
     public void testGetCurrentMeals() {
     }
 
     /**
-     * Test of addToOrder method, of class MealServiceImpl.
+     * Test of addToCart method, of class MealServiceImpl.
      */
     @Test
     public void testAddToOrder() {
         MealServiceImpl service = new MealServiceImpl();
-        service.addToOrder(new Meal("Rizek", 20), new Meal("Hranolky", 10));
+        service.addToCart(new Meal("Rizek", 20), new Meal("Hranolky", 10));
         assertEquals(1, service.getNumberOfOrderedMeals());
     }
 
@@ -67,7 +67,7 @@ public class MealServiceImplTest {
     }
 
     /**
-     * Test of getChosenMeals method, of class MealServiceImplementation.
+     * Test of getMealsInCart method, of class MealServiceImplementation.
      */
     @Test
     public void testGetChosenMeals() {
@@ -80,8 +80,8 @@ public class MealServiceImplTest {
     @Test
     public void testGetNumberOfOrderedMeals() {
         MealServiceImpl service = new MealServiceImpl();
-        service.addToOrder(new Meal("Kurizek", 20), new Meal("brambor", 10));
-        service.addToOrder(new Meal("Kurizek", 20), new Meal("brambor", 10));
+        service.addToCart(new Meal("Kurizek", 20), new Meal("brambor", 10));
+        service.addToCart(new Meal("Kurizek", 20), new Meal("brambor", 10));
         assertEquals(service.getNumberOfOrderedMeals(), 2);
     }
 
@@ -107,7 +107,7 @@ public class MealServiceImplTest {
     @Test
     public void testGetPriceOfChosenMealsWithoutSideDishes() {
         MealServiceImpl service = new MealServiceImpl();
-         service.addToOrder(new Meal("Rybí polévka", 17), null);
+         service.addToCart(new Meal("Rybí polévka", 17), null);
         assertEquals(17, service.getPriceOfChosenMeals());
     }
       /**
@@ -116,7 +116,7 @@ public class MealServiceImplTest {
     @Test
     public void testGetPriceOfChosenMealsWithSideDishes() {
         MealServiceImpl service = new MealServiceImpl();
-        service.addToOrder(new Meal("Kuøízek", 20), new Meal("brambor", 10));
+        service.addToCart(new Meal("Kuøízek", 20), new Meal("brambor", 10));
         assertEquals(30, service.getPriceOfChosenMeals());
     }
     
@@ -126,8 +126,8 @@ public class MealServiceImplTest {
     @Test
     public void testGetPriceOfMultipleChoosenDishes() {
         MealServiceImpl service = new MealServiceImpl();
-        service.addToOrder(new Meal("Kuøízek", 20), new Meal("brambor", 10));
-        service.addToOrder(new Meal("Kuøízek", 20), new Meal("brambor", 10));
+        service.addToCart(new Meal("Kuøízek", 20), new Meal("brambor", 10));
+        service.addToCart(new Meal("Kuøízek", 20), new Meal("brambor", 10));
         assertEquals(60, service.getPriceOfChosenMeals());
     }
     

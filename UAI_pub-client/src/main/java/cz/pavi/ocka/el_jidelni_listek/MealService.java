@@ -16,12 +16,12 @@ public interface MealService {
      * @param type type of food
      * @return
      */
-    List<Meal> getCurrentMeals(int type);
+    List<Meal> getMealsByType(int type);
 
-    List<Pair<Meal, Meal>> getChosenMeals();
+    List<Pair<Meal, Meal>> getMealsInCart();
 
     //List<Order> getOrdersByTableId(int tableId);
-    void addToOrder(Meal meal, Meal sideDishes);
+    void addToCart(Meal meal, Meal sideDish);
 
     /**
      * The method which allows delete orders. This method serves for the next
@@ -56,5 +56,10 @@ public interface MealService {
      * @return
      */
     int getPriceOfChosenMeals();
+    
+    List<Pair<Meal, Meal>>getOrders();
+    
+    List<Pair<Meal, Meal>>getOrdersByTableId(int tableID);
+    
 
 }
