@@ -19,18 +19,19 @@ public interface MealService {
     HashMap <Meal, Meal> getChosenMeals();
 
     //List<Order> getOrdersByTableId(int tableId);
-    
     void addToOrder(Meal meal, Meal sideDishes);
 
     /**
-     * The method which allows delete orders. This method serves for the next 
+     * The method which allows delete orders. This method serves for the next
      * order on the same table.
+     *
      * @param tableId Number of the table where the order will be deleted.
      */
     void deleteOrders(int tableId);
-    
+
     /**
      * The method which allows you to make an order.
+     *
      * @param tableId Number of the table
      * @param orderedMeals List of ordered meals
      */
@@ -39,17 +40,18 @@ public interface MealService {
     void setChosenTable(int number);
 
     int getChosenTable();
-    
+
     /**
      * The method which is counting the number of your ordered items.
+     *
      * @return Number
      */
     int getNumberOfOrderedMeals();
 
-    
     /**
      * The method which returns price of meals which you added to your order.
-     * @return 
+     *
+     * @return
      */
     int getPriceOfChosenMeals();
 

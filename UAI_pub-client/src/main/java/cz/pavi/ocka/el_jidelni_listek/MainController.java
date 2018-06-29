@@ -46,7 +46,7 @@ public class MainController implements Initializable {
     private Tab desserts;
     @FXML
     private Tab drinks;
-    
+
     @FXML
     private Button confirm;
 
@@ -79,7 +79,7 @@ public class MainController implements Initializable {
     private MealService service;
 
     private int chosenType = 1;
-    
+
     private SpinnerValueFactory<Integer> valueFactory;
 
     private final int SOUPS = 1;
@@ -133,7 +133,7 @@ public class MainController implements Initializable {
             Button added = (Button) panel.lookup("#added" + i);
             added.setVisible(false);
         }
-        
+
         fillSpinner();
 
         checkChangedTab();
@@ -319,11 +319,10 @@ public class MainController implements Initializable {
 
         return imageView;
     }
-    
-    private void fillSpinner()
-    {
-        SpinnerValueFactory<Integer> valueFactory =
-                new SpinnerValueFactory.IntegerSpinnerValueFactory(1, 5, 1);
+
+    private void fillSpinner() {
+        SpinnerValueFactory<Integer> valueFactory
+                = new SpinnerValueFactory.IntegerSpinnerValueFactory(1, 5, 1);
         table.setValueFactory(valueFactory);
     }
 
@@ -338,16 +337,13 @@ public class MainController implements Initializable {
             added.setDisable(false);
         }
     }
-    
+
     @FXML
-    public void onOrderClicked(ActionEvent actionEvent)
-    {
+    public void onOrderClicked(ActionEvent actionEvent) {
         service.makeOrder();
         numberOfItems.setText(String.valueOf(service.getNumberOfOrderedMeals()));
         totalPrice.setText(String.valueOf(service.getPriceOfChosenMeals() + " CZK"));
     }
-        
-    
 
     private void openNewWindow() {
 

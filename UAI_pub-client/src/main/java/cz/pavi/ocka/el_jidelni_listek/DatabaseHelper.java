@@ -86,41 +86,37 @@ public class DatabaseHelper {
         }
         return meals;
     }
-    
-    public void addOrderToDatabase(int chosenTable, HashMap<Meal, Meal>chosenMeals)
-    {
-       
-        
-            for (Meal j : chosenMeals.keySet()) 
-            {
-                try {
-                
+
+    /**
+     * Adds orders to the database.
+     *
+     * @param chosenTable chosen Table
+     * @param chosenMeals chosen Meals
+     */
+    public void addOrderToDatabase(int chosenTable, HashMap<Meal, Meal> chosenMeals) {
+
+        for (Meal j : chosenMeals.keySet()) {
+            try {
+
                 final String query = "INSERT INTO Objednavky(CisloStolu, NazevJidla, Priloha, Cena)" + " VALUES(?, ?, ?, ?)";
                 final PreparedStatement ps = (PreparedStatement) conn.prepareStatement(query);
                 ps.setInt(1, chosenTable);
                 ps.setString(2, j.getName());
-                if (chosenMeals.get(j) != null) 
-                {
+                if (chosenMeals.get(j) != null) {
                     ps.setString(3, chosenMeals.get(j).getName());
-                    ps.setInt(4, chosenMeals.get(j).getPrice()+j.getPrice());
-                }
-                else
-                {
+                    ps.setInt(4, chosenMeals.get(j).getPrice() + j.getPrice());
+                } else {
                     ps.setString(3, null);
                     ps.setInt(4, j.getPrice());
                 }
-               
+
                 ps.executeUpdate();
-               
-                }catch(SQLException ex)
-                {
-                    System.out.println(ex.getMessage());
-                }
+
+            } catch (SQLException ex) {
+                System.out.println(ex.getMessage());
             }
-            
-            
-        
-        
+        }
+
     }
 
 }
