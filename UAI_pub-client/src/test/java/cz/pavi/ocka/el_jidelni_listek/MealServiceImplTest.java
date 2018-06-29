@@ -13,24 +13,6 @@ import static org.junit.Assert.*;
  * @author Patrik-NB
  */
 public class MealServiceImplTest {
-    
-    public MealServiceImplTest() {
-    }
-
-    /**
-     * Test of getSideDishes method, of class MealServiceImpl.
-     */
-    @Test
-    public void testGetSideDishes() {
-       
-    }
-
-    /**
-     * Test of getCurrentMeals method, of class MealServiceImpl.
-     */
-    @Test
-    public void testGetCurrentMeals() {
-    }
 
     /**
      * Test of addToOrder method, of class MealServiceImpl.
@@ -40,27 +22,6 @@ public class MealServiceImplTest {
         MealServiceImpl service = new MealServiceImpl();
         service.addToOrder(new Meal("Rizek", 20), new Meal("Hranolky", 10));
         assertEquals(1, service.getNumberOfOrderedMeals());
-    }
-
-    /**
-     * Test of setChosenTable method, of class MealServiceImplementation.
-     */
-    @Test
-    public void testSetChosenTable() {
-    }
-
-    /**
-     * Test of getChosenTable method, of class MealServiceImplementation.
-     */
-    @Test
-    public void testGetChosenTable() {
-    }
-
-    /**
-     * Test of getChosenMeals method, of class MealServiceImplementation.
-     */
-    @Test
-    public void testGetChosenMeals() {
     }
 
     /**
